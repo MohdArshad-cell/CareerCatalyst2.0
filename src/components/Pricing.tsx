@@ -140,7 +140,9 @@ export function Pricing() {
                   </ul>
 
                   <a
-                    href={`mailto:hello@careercatalyst.com?subject=Interested in ${tier.name} Package`}
+                    href={`https://wa.me/917887096421?text=${encodeURIComponent(`Hi, I'm interested in the ${tier.name} package.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-full mt-auto py-5 rounded-2xl font-bold transition-all flex items-center justify-center uppercase tracking-widest text-sm relative overflow-hidden ${tier.highlighted
                       ? "bg-primary-600/20 text-primary-300 hover:text-white border border-primary-500/50 hover:bg-primary-600 shadow-[0_0_30px_rgba(99,102,241,0.2)]"
                       : "bg-white/5 text-zinc-300 hover:text-white border border-white/10 hover:bg-white/10 hover:border-white/20"

@@ -6,7 +6,9 @@ import { MessageCircle } from "lucide-react";
 export function FloatingChat() {
   return (
     <motion.a
-      href="mailto:hello@careercatalyst.com"
+      href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20Career%20Catalyst%20services."
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0.5, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: 2, type: "spring" }}

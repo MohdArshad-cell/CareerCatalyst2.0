@@ -30,86 +30,39 @@ export function Footer() {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+        <div className="flex flex-col items-center mb-20 text-center">
           
-          {/* Booking Form / Lead Capture */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white/5 border border-white/10 p-8 rounded-3xl"
-          >
-            <h3 className="text-2xl font-bold text-white mb-2">Get Your Free Profile Audit</h3>
-            <p className="text-zinc-400 mb-8">Submit your current resume and target roles. We'll get back to you within 24 hours.</p>
-            
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm text-zinc-400 font-medium">Name</label>
-                  <input type="text" placeholder="John Doe" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm text-zinc-400 font-medium">Email / WhatsApp</label>
-                  <input type="text" placeholder="john@example.com" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-zinc-400 font-medium">Target Role & Level</label>
-                <input type="text" placeholder="e.g. SDE II, Backend Engineer" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-zinc-400 font-medium">Current Resume Link (Google Drive / DropBox)</label>
-                <input type="url" placeholder="https://..." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" />
-              </div>
-              <button type="submit" className="w-full py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.2)] mt-4">
-                Request Free Audit
-              </button>
-              <p className="text-xs text-zinc-500 text-center mt-4 pt-2">We never share your data. Period.</p>
-            </form>
-          </motion.div>
-
           {/* Direct Contact & Payment Badges */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center"
+            className="flex flex-col items-center max-w-xl mx-auto"
           >
             <h3 className="text-3xl font-bold text-white mb-4">Ready to transform your applications?</h3>
             <p className="text-zinc-400 mb-8 font-light">Join <span className="text-white font-bold">100+ engineers</span> who stopped getting ghosted and landed their dream roles.</p>
             
-            <div className="space-y-6 mb-12">
-              <a href="#" className="flex items-center gap-4 text-zinc-300 hover:text-white transition-colors group">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-primary-500/20 group-hover:border-primary-500/50 transition-colors">
-                  <Calendar className="w-5 h-5 text-primary-400" />
+            <div className="w-full mb-12">
+              <a href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20Career%20Catalyst%20services." target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 text-zinc-300 hover:text-white transition-colors group bg-white/5 border border-white/10 hover:border-white/20 p-6 rounded-2xl w-full">
+                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex shrink-0 items-center justify-center group-hover:bg-primary-500/20 group-hover:border-primary-500/50 transition-colors">
+                  <MessageCircle className="w-5 h-5 text-primary-400" />
                 </div>
-                <div>
-                  <div className="font-semibold text-lg">Schedule a Call via Calendly</div>
-                  <div className="text-sm text-zinc-500">Pick a 15-min slot that works for you.</div>
-                </div>
-              </a>
-              
-              <a href="mailto:hello@careercatalyst.com" className="flex items-center gap-4 text-zinc-300 hover:text-white transition-colors group">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-primary-500/20 group-hover:border-primary-500/50 transition-colors">
-                  <Mail className="w-5 h-5 text-primary-400" />
-                </div>
-                <div>
-                  <div className="font-semibold text-lg">hello@careercatalyst.com</div>
-                  <div className="text-sm text-zinc-500">Direct email support.</div>
+                <div className="text-left">
+                  <div className="font-semibold text-lg">Chat on WhatsApp</div>
+                  <div className="text-sm text-zinc-500">+91 7887096421</div>
                 </div>
               </a>
             </div>
 
             <div>
               <p className="text-sm text-zinc-500 mb-4 font-medium uppercase tracking-wider">Trusted Payment Partners</p>
-              <div className="flex gap-4">
+              <div className="flex justify-center gap-4">
                 <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white font-bold text-sm">Stripe</div>
                 <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white font-bold text-sm">PayPal</div>
                 <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white font-bold text-sm">Razorpay</div>
               </div>
             </div>
           </motion.div>
-
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
