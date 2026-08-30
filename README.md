@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Career Catalyst 2.0
 
-## Getting Started
+> Precision-Engineered Deliverables for the US Tech Market. Turn ghosted applications into top-tier tech interviews.
 
-First, run the development server:
+Career Catalyst is a high-conversion, cinematic web application built to help software engineers optimize their resumes, LinkedIn profiles, and digital footprints to beat ATS systems and land roles in the US Tech Market.
+
+## 🚀 Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Fonts:** Inter & JetBrains Mono (next/font)
+
+## ✨ Features
+
+- **Cinematic 3D UI:** Interactive floating mockups, magnetic buttons, and parallax scrolling backgrounds.
+- **Dynamic Lazy Loading:** Heavy components are loaded dynamically (`next/dynamic`) for instantaneous First Contentful Paint (FCP).
+- **Accessibility Built-In:** Full support for `useReducedMotion` to disable complex 3D tilts and animations for users with OS-level motion sickness preferences.
+- **ATS Scanner Simulation:** An interactive terminal simulation that visualizes the difference between standard and optimized resumes.
+- **Responsive Design:** A flawless mobile-first architecture that progressively enhances into a massive desktop experience.
+
+## 💻 Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.tsx`: The main cinematic landing page.
+- `src/app/services/page.tsx`: Deep-dive service breakdowns with interactive 3D portfolio cards.
+- `src/components/`: Contains all reusable, highly animated UI components (Hero, ATSScanner, Pricing, TiltCard, etc.)
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is optimized for deployment on [Vercel](https://vercel.com).
