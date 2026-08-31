@@ -236,8 +236,8 @@ export function FAQ() {
               View Pricing
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href="mailto:support@careercatalyst.com" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-bold transition-all">
-              Email Support
+            <a href="https://wa.me/917887096421?text=Hi,%20I%20have%20a%20question%20about%20Career%20Catalyst%20services." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-bold transition-all">
+              Chat on WhatsApp
             </a>
           </div>
         </motion.div>
