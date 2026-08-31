@@ -21,6 +21,18 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Career Catalyst | High-Impact Dev Portfolios & ATS Resumes",
   description: "Turn ghosted applications into top-tier tech interviews with Career Catalyst. ATS-optimized resumes, recruiter-indexed LinkedIn profiles, and high-impact dev portfolios.",
+  openGraph: {
+    title: "Career Catalyst | High-Impact Dev Portfolios & ATS Resumes",
+    description: "Turn ghosted applications into top-tier tech interviews with Career Catalyst. ATS-optimized resumes, recruiter-indexed LinkedIn profiles, and high-impact dev portfolios.",
+    images: ["/hero-mockup.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Career Catalyst | High-Impact Dev Portfolios & ATS Resumes",
+    description: "Turn ghosted applications into top-tier tech interviews with Career Catalyst.",
+    images: ["/hero-mockup.jpg"],
+  },
 };
 
 export default function RootLayout({

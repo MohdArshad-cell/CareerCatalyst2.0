@@ -3,13 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const lines = [
-  "> Initializing ATS optimization...",
-  "> Injecting keywords: React, Node...",
-  "> Re-formatting to LaTeX standard...",
-  "> Deploying Next.js portfolio...",
-  "> Status: Hired at Top Tech!"
-];
+import { terminalLines as lines } from "@/data/constants";
 
 export function Terminal() {
   const [currentLine, setCurrentLine] = useState(0);

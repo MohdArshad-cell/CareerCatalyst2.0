@@ -4,13 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CheckCircle2, Zap } from "lucide-react";
 
-const notifications = [
-  { text: "Sarah J. just landed a role at Stripe!", icon: Zap, color: "text-indigo-400" },
-  { text: "David M. passed the ATS screening at Google.", icon: CheckCircle2, color: "text-emerald-400" },
-  { text: "Michael T. secured an interview at Meta.", icon: Zap, color: "text-blue-400" },
-  { text: "Emily R. got hired at Netflix.", icon: Zap, color: "text-red-400" },
-  { text: "James K. just optimized their portfolio.", icon: CheckCircle2, color: "text-accent-400" },
-];
+import { recentNotifications as notifications } from "@/data/constants";
 
 export function LiveToasts() {
   const [active, setActive] = useState<number | null>(null);

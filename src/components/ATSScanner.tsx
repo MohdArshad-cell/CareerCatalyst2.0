@@ -4,23 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, RotateCcw, AlertTriangle, CheckCircle2 } from "lucide-react";
 
-const standardLogs = [
-  { text: "Scanning standard_resume.pdf...", type: "info", delay: 500 },
-  { text: "[WARN] Unreadable column layout detected.", type: "warn", delay: 1200 },
-  { text: "[ERROR] Keyword 'React' not parsed.", type: "error", delay: 2000 },
-  { text: "[ERROR] Keyword 'Next.js' not parsed.", type: "error", delay: 2800 },
-  { text: "Calculating ATS Match Score...", type: "info", delay: 3500 },
-  { text: "RESULT: 12% Match. Auto-Rejecting.", type: "error", delay: 4500 },
-];
-
-const optimizedLogs = [
-  { text: "Scanning us_tech_optimized_resume.tex...", type: "info", delay: 500 },
-  { text: "[SUCCESS] Single-column LaTeX layout verified.", type: "success", delay: 1200 },
-  { text: "[SUCCESS] Parsed keyword 'React' (4 matches).", type: "success", delay: 1800 },
-  { text: "[SUCCESS] Parsed keyword 'Next.js' (3 matches).", type: "success", delay: 2400 },
-  { text: "Calculating ATS Match Score...", type: "info", delay: 3200 },
-  { text: "RESULT: 98% Match. Forwarding to Recruiter.", type: "success", delay: 4200 },
-];
+import { atsStandardLogs as standardLogs, atsOptimizedLogs as optimizedLogs } from "@/data/constants";
 
 export function ATSScanner() {
   const [isScanning, setIsScanning] = useState(false);
