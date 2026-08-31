@@ -17,12 +17,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Services", href: "/services" },
-    { name: "Proof", href: "/#proof" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "FAQ", href: "/faq" },
-  ];
+    const navLinks = [
+      { name: "Services", href: "/services" },
+      { name: "Proof", href: "/#proof" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "FAQ", href: "/faq" },
+      { name: "Blog", href: "/blog" },
+    ];
 
   return (
     <>
