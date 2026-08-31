@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Sparkles, Activity, FileCheck, Target } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MagneticButton } from "./MagneticButton";
@@ -12,6 +12,7 @@ export function Hero() {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => setIsMounted(true), []);
 
+  const shouldReduceMotion = useReducedMotion();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -32,6 +33,7 @@ export function Hero() {
   const badge3Y = useTransform(springY, [-1, 1], ["-3%", "3%"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (shouldReduceMotion) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     // Normalize from -1 to 1
@@ -51,7 +53,7 @@ export function Hero() {
 
       <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-left flex flex-col items-start relative z-20 pt-10"
@@ -63,7 +65,7 @@ export function Hero() {
           
           <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8 leading-[1.1]">
             Turn Ghosted Applications into <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-400 bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] drop-shadow-[0_0_40px_rgba(45,212,191,0.4)]">
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-400 bg-[length:200%_auto] ${shouldReduceMotion ? '' : 'animate-[shimmer_3s_linear_infinite]'} drop-shadow-[0_0_40px_rgba(45,212,191,0.4)]`}>
               Career Catalyst.
             </span>
           </h1>
@@ -74,9 +76,9 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-6 mb-8 w-full max-w-md">
             <MagneticButton href="#pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600/20 text-primary-300 hover:text-white font-mono uppercase tracking-widest text-sm rounded-2xl transition-all shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] w-full sm:w-auto z-20">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[300%] bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(99,102,241,1)_360deg)] animate-[spin_2s_linear_infinite] z-0" />
+              <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[300%] bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(99,102,241,1)_360deg)] ${shouldReduceMotion ? '' : 'animate-[spin_2s_linear_infinite]'} z-0`} />
               <div className="absolute inset-[2px] bg-primary-950 group-hover:bg-primary-900 rounded-[14px] z-0 transition-colors" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] z-10 rounded-[14px]" />
+              <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full ${shouldReduceMotion ? '' : 'group-hover:animate-[shimmer_1.5s_infinite]'} z-10 rounded-[14px]`} />
               <span className="relative z-20 flex items-center gap-2">
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -114,16 +116,16 @@ export function Hero() {
 
         {/* Futuristic Glowing Mockup with Floating Badges */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          style={{ x: mockupX, y: mockupY }}
+          transition={{ duration: 1, delay: shouldReduceMotion ? 0 : 0.2, ease: "easeOut" }}
+          style={shouldReduceMotion ? {} : { x: mockupX, y: mockupY }}
           className="relative w-full max-w-xl mx-auto perspective-[2000px] mt-16 lg:mt-0"
         >
           {/* Floating Badge 1: ATS Score */}
           <motion.div 
-            style={{ x: badge1X }}
-            animate={{ y: [-10, 10, -10] }}
+            style={shouldReduceMotion ? {} : { x: badge1X }}
+            animate={shouldReduceMotion ? {} : { y: [-10, 10, -10] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -top-10 -left-12 z-30 hidden md:flex items-center gap-3 bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
           >
@@ -138,8 +140,8 @@ export function Hero() {
 
           {/* Floating Badge 2: Recruiter Index */}
           <motion.div 
-            style={{ x: badge2X }}
-            animate={{ y: [15, -15, 15] }}
+            style={shouldReduceMotion ? {} : { x: badge2X }}
+            animate={shouldReduceMotion ? {} : { y: [15, -15, 15] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             className="absolute bottom-16 -right-12 z-30 hidden md:flex items-center gap-3 bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
           >
@@ -154,8 +156,8 @@ export function Hero() {
 
           {/* Floating Badge 3: Target Match */}
           <motion.div 
-            style={{ y: badge3Y }}
-            animate={{ y: [-5, 5, -5] }}
+            style={shouldReduceMotion ? {} : { y: badge3Y }}
+            animate={shouldReduceMotion ? {} : { y: [-5, 5, -5] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
             className="absolute -bottom-10 left-8 z-30 hidden lg:flex items-center gap-3 bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
           >
@@ -177,37 +179,37 @@ export function Hero() {
 
           {/* 3D Orbiting Tech Logos */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] md:w-[120%] md:h-[120%] lg:w-[150%] lg:h-[150%] pointer-events-none z-0 scale-75 md:scale-100 opacity-60">
-            <div className="w-full h-full animate-[spin_40s_linear_infinite] rounded-full border border-white/5 relative">
+            <div className={`w-full h-full ${shouldReduceMotion ? '' : 'animate-[spin_40s_linear_infinite]'} rounded-full border border-white/5 relative`}>
                {/* META - Top */}
-               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-10" style={{ animation: "spin 40s linear infinite reverse" }}>
+               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-10" style={shouldReduceMotion ? {} : { animation: "spin 40s linear infinite reverse" }}>
                  <div className="w-full h-full flex items-center justify-center font-bold tracking-widest text-sm bg-zinc-950/80 backdrop-blur-md rounded-xl border border-white/10 shadow-xl text-blue-500">META</div>
                </div>
                {/* GOOGLE - Right */}
-               <div className="absolute top-1/2 -right-14 -translate-y-1/2 w-28 h-10" style={{ animation: "spin 40s linear infinite reverse" }}>
+               <div className="absolute top-1/2 -right-14 -translate-y-1/2 w-28 h-10" style={shouldReduceMotion ? {} : { animation: "spin 40s linear infinite reverse" }}>
                  <div className="w-full h-full flex items-center justify-center font-bold tracking-widest text-sm bg-zinc-950/80 backdrop-blur-md rounded-xl border border-white/10 shadow-xl text-red-400">GOOGLE</div>
                </div>
                {/* STRIPE - Bottom */}
-               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-10" style={{ animation: "spin 40s linear infinite reverse" }}>
+               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-10" style={shouldReduceMotion ? {} : { animation: "spin 40s linear infinite reverse" }}>
                  <div className="w-full h-full flex items-center justify-center font-bold tracking-widest text-sm bg-zinc-950/80 backdrop-blur-md rounded-xl border border-white/10 shadow-xl text-indigo-400">STRIPE</div>
                </div>
                {/* NETFLIX - Left */}
-               <div className="absolute top-1/2 -left-14 -translate-y-1/2 w-28 h-10" style={{ animation: "spin 40s linear infinite reverse" }}>
+               <div className="absolute top-1/2 -left-14 -translate-y-1/2 w-28 h-10" style={shouldReduceMotion ? {} : { animation: "spin 40s linear infinite reverse" }}>
                  <div className="w-full h-full flex items-center justify-center font-bold tracking-widest text-sm bg-zinc-950/80 backdrop-blur-md rounded-xl border border-white/10 shadow-xl text-red-600">NETFLIX</div>
                </div>
             </div>
           </div>
 
           <motion.div 
-            whileHover={{ rotateX: 2, rotateY: -2 }}
+            whileHover={shouldReduceMotion ? {} : { rotateX: 2, rotateY: -2 }}
             transition={{ duration: 0.4 }}
             className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(99,102,241,0.15)] bg-black/50 backdrop-blur-xl z-20"
             style={{ transformOrigin: "center center" }}
           >
             {/* Animated Scanning Line */}
             <motion.div 
-              animate={{ top: ["-10%", "110%"] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="absolute left-0 w-full h-[2px] bg-primary-500/50 shadow-[0_0_20px_rgba(99,102,241,0.8)] z-20 pointer-events-none" 
+              animate={shouldReduceMotion ? { top: "50%" } : { top: ["-10%", "110%"] }}
+              transition={shouldReduceMotion ? {} : { duration: 3, repeat: Infinity, ease: "linear" }}
+              className={`absolute left-0 w-full h-[2px] bg-primary-500/50 shadow-[0_0_20px_rgba(99,102,241,0.8)] z-20 pointer-events-none ${shouldReduceMotion ? 'hidden' : ''}`}
             />
             
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-50" />

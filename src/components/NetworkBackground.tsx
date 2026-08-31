@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "framer-motion";
 
 export function NetworkBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || shouldReduceMotion) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -18,7 +20,6 @@ export function NetworkBackground() {
     canvas.height = height;
 
     const particles: { x: number, y: number, vx: number, vy: number }[] = [];
-    // Adjust density based on screen size
     const numParticles = Math.floor((width * height) / 15000);
 
     for (let i = 0; i < numParticles; i++) {
@@ -41,8 +42,25 @@ export function NetworkBackground() {
     window.addEventListener("mousemove", handleMouseMove);
 
     let animationFrameId: number;
+    let isVisible = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          draw();
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     const draw = () => {
+      if (!isVisible) return;
+
       ctx.clearRect(0, 0, width, height);
       
       for (let i = 0; i < numParticles; i++) {
@@ -57,7 +75,6 @@ export function NetworkBackground() {
         const dy = mouseY - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        // Mouse push effect
         if (dist < 150) {
           p.x -= dx * 0.01;
           p.y -= dy * 0.01;
@@ -65,10 +82,9 @@ export function NetworkBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(45, 212, 191, 0.4)"; // Emerald 400
+        ctx.fillStyle = "rgba(45, 212, 191, 0.4)";
         ctx.fill();
 
-        // Connect particles
         for (let j = i + 1; j < numParticles; j++) {
           const p2 = particles[j];
           const dx2 = p.x - p2.x;
@@ -79,7 +95,7 @@ export function NetworkBackground() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - dist2 / 120)})`; // Indigo 500
+            ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - dist2 / 120)})`;
             ctx.stroke();
           }
         }
@@ -87,8 +103,6 @@ export function NetworkBackground() {
 
       animationFrameId = requestAnimationFrame(draw);
     };
-
-    draw();
 
     const handleResize = () => {
       width = window.innerWidth;
@@ -101,9 +115,10 @@ export function NetworkBackground() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [shouldReduceMotion]);
 
   return (
     <canvas 

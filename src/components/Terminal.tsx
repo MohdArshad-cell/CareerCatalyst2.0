@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const lines = [
@@ -14,8 +14,14 @@ const lines = [
 export function Terminal() {
   const [currentLine, setCurrentLine] = useState(0);
   const [text, setText] = useState("");
+  const shouldReduceMotion = useReducedMotion();
   
   useEffect(() => {
+    if (shouldReduceMotion) {
+      setCurrentLine(lines.length);
+      return;
+    }
+
     if (currentLine >= lines.length) return;
     
     let timeout: NodeJS.Timeout;
@@ -33,13 +39,13 @@ export function Terminal() {
     }
     
     return () => clearTimeout(timeout);
-  }, [text, currentLine]);
+  }, [text, currentLine, shouldReduceMotion]);
 
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1 }}
+      transition={{ delay: shouldReduceMotion ? 0 : 1 }}
       className="absolute -top-12 -right-24 z-40 hidden xl:flex flex-col w-72 bg-zinc-950/90 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
     >
       {/* Header */}
@@ -55,7 +61,7 @@ export function Terminal() {
         {lines.slice(0, currentLine).map((l, i) => (
           <div key={i} className="text-zinc-400 mb-1">{l}</div>
         ))}
-        {currentLine < lines.length && (
+        {currentLine < lines.length && !shouldReduceMotion && (
           <div className="text-emerald-400">
             {text}<span className="animate-pulse">_</span>
           </div>
