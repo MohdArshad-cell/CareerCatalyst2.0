@@ -37,8 +37,8 @@ export function Navbar() {
         <header 
           className={`transition-all duration-500 rounded-2xl border ${
             isScrolled 
-              ? "bg-black/60 backdrop-blur-xl border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.15)] py-3 px-6 w-full max-w-4xl" 
-              : "bg-black/20 backdrop-blur-md border-transparent py-4 px-6 w-full max-w-5xl"
+              ? "bg-black/60 backdrop-blur-xl border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.15)] py-3 px-6 w-full max-w-5xl" 
+              : "bg-black/20 backdrop-blur-md border-transparent py-4 px-6 w-full max-w-6xl"
           }`}
         >
           <div className="flex items-center justify-between">
@@ -51,7 +51,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8 bg-white/5 px-6 py-2 rounded-full border border-white/5 relative">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-8 bg-white/5 px-6 py-2 rounded-full border border-white/5 relative">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
@@ -63,7 +63,7 @@ export function Navbar() {
               ))}
             </nav>
 
-            <Link href="/#audit" className="relative hidden md:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
+            <Link href="/#audit" className="relative hidden lg:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
               <span className="relative z-10">Free Resume Audit</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] z-0" />
               <div className="absolute inset-0 rounded-full border border-primary-500/50 animate-[ping_3s_ease-in-out_infinite] opacity-30 pointer-events-none" />
@@ -71,7 +71,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden text-white bg-white/10 p-2 rounded-lg"
+            className="lg:hidden text-white bg-white/10 p-2 rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -85,7 +85,7 @@ export function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 overflow-hidden border-t border-white/10 bg-black/50 backdrop-blur-xl rounded-b-2xl mx-[-1.5rem] px-6"
+              className="lg:hidden mt-4 overflow-hidden border-t border-white/10 bg-black/50 backdrop-blur-xl rounded-b-2xl mx-[-1.5rem] px-6"
             >
               <div className="flex flex-col gap-2 py-4">
                 {navLinks.map((link) => (
