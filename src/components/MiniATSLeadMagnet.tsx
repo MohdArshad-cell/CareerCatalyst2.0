@@ -43,7 +43,7 @@ export function MiniATSLeadMagnet() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-black border-y border-white/5">
+    <section id="audit" className="py-24 relative overflow-hidden bg-black border-y border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.05)_0%,transparent_70%)] pointer-events-none" />
       
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">

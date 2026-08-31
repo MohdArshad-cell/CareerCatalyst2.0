@@ -24,7 +24,7 @@ export function Footer() {
             <p className="text-xl text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
               Select a package today and let us transform your digital footprint to bypass ATS filters and secure top-tier interviews.
             </p>
-            <a href="/services#pricing" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg rounded-2xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] hover:-translate-y-1">
+            <a href="/pricing" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg rounded-2xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] hover:-translate-y-1">
               Select Your Package
             </a>
           </div>

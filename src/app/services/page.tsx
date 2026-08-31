@@ -11,9 +11,6 @@ import { Services } from "@/components/Services";
 const ATSScanner = dynamic(() => import("@/components/ATSScanner").then(mod => mod.ATSScanner));
 const ResumeSlider = dynamic(() => import("@/components/ResumeSlider").then(mod => mod.ResumeSlider));
 const Process = dynamic(() => import("@/components/Process").then(mod => mod.Process));
-const SalaryGraph = dynamic(() => import("@/components/SalaryGraph").then(mod => mod.SalaryGraph));
-const Pricing = dynamic(() => import("@/components/Pricing").then(mod => mod.Pricing));
-const FAQ = dynamic(() => import("@/components/FAQ").then(mod => mod.FAQ));
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
 
 export default function ServicesPage() {
@@ -429,9 +426,6 @@ export default function ServicesPage() {
       </div>
       
       <Process />
-      <SalaryGraph />
-      <Pricing />
-      <FAQ />
 
       <Footer />
     </main>
