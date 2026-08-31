@@ -7,6 +7,7 @@ import { Proof } from "@/components/Proof";
 import dynamic from "next/dynamic";
 
 const ATSScanner = dynamic(() => import("@/components/ATSScanner").then(mod => mod.ATSScanner));
+const MiniATSLeadMagnet = dynamic(() => import("@/components/MiniATSLeadMagnet").then(mod => mod.MiniATSLeadMagnet));
 const ResumeSlider = dynamic(() => import("@/components/ResumeSlider").then(mod => mod.ResumeSlider));
 const Testimonials = dynamic(() => import("@/components/Testimonials").then(mod => mod.Testimonials));
 const SalaryGraph = dynamic(() => import("@/components/SalaryGraph").then(mod => mod.SalaryGraph));
@@ -24,6 +25,7 @@ export default function Home() {
       <Services />
       <Proof />
       <ATSScanner />
+      <MiniATSLeadMagnet />
       <ResumeSlider />
       <Testimonials />
       <SalaryGraph />
