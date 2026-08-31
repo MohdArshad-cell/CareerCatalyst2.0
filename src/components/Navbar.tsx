@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,31 +42,31 @@ export function Navbar() {
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="/" className="font-bold text-lg tracking-tight text-white flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Link href="/" className="font-bold text-lg tracking-tight text-white flex items-center gap-3 hover:opacity-80 transition-opacity">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-400 flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]">
                 <span className="text-black font-black text-xs">CC</span>
               </div>
               <span className="hidden sm:block font-mono text-sm uppercase tracking-widest text-zinc-300">Career Catalyst</span>
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8 bg-white/5 px-6 py-2 rounded-full border border-white/5 relative">
               {navLinks.map((link) => (
-                <a 
+                <Link 
                   key={link.name} 
                   href={link.href} 
                   className="text-xs uppercase tracking-widest font-medium text-zinc-400 hover:text-white transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </nav>
 
-            <a href="/#audit" className="relative hidden md:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
+            <Link href="/#audit" className="relative hidden md:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
               <span className="relative z-10">Free Resume Audit</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] z-0" />
               <div className="absolute inset-0 rounded-full border border-primary-500/50 animate-[ping_3s_ease-in-out_infinite] opacity-30 pointer-events-none" />
-            </a>
+            </Link>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -87,22 +88,22 @@ export function Navbar() {
             >
               <div className="flex flex-col gap-2 py-4">
                 {navLinks.map((link) => (
-                  <a 
+                  <Link 
                     key={link.name} 
                     href={link.href} 
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-sm font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
-                <a 
+                <Link 
                   href="/#audit" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full px-5 py-3 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-center font-bold font-mono text-sm uppercase tracking-widest rounded-lg mt-2"
                 >
                   Free Resume Audit
-                </a>
+                </Link>
               </div>
             </motion.nav>
           )}

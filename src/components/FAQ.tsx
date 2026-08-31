@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown, MessageCircleQuestion, Search, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type Category = "All" | "General & Eligibility" | "The Process" | "Pricing & Guarantees";
 
@@ -231,10 +232,10 @@ export function FAQ() {
             Our team is ready to answer any specific questions you have about our process, your unique situation, or our pricing.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-bold transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]">
+            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-bold transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]">
               View Pricing
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
             <a href="mailto:support@careercatalyst.com" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-bold transition-all">
               Email Support
             </a>

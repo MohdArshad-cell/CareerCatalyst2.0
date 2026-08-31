@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, Calendar, Globe } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -24,9 +25,9 @@ export function Footer() {
             <p className="text-xl text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
               Select a package today and let us transform your digital footprint to bypass ATS filters and secure top-tier interviews.
             </p>
-            <a href="/pricing" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg rounded-2xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] hover:-translate-y-1">
+            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg rounded-2xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] hover:-translate-y-1">
               Select Your Package
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -68,7 +69,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-zinc-500 text-sm">
             <span>© {new Date().getFullYear()} Career Catalyst. All rights reserved.</span>
-            <a href="/services" className="hover:text-white transition-colors">Services Details</a>
+            <Link href="/services" className="hover:text-white transition-colors">Services Details</Link>
           </div>
           <div className="flex items-center gap-4 text-zinc-500">
             <a href="#" className="hover:text-white transition-colors"><Globe className="w-5 h-5" /></a>
