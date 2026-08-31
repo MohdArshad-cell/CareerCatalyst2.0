@@ -6,7 +6,10 @@ import { CheckCircle2, ArrowRight, FileText, Search, LayoutTemplate, Star, Zap, 
 import dynamic from "next/dynamic";
 
 import { Problem } from "@/components/Problem";
+import { Services } from "@/components/Services";
 
+const ATSScanner = dynamic(() => import("@/components/ATSScanner").then(mod => mod.ATSScanner));
+const ResumeSlider = dynamic(() => import("@/components/ResumeSlider").then(mod => mod.ResumeSlider));
 const Process = dynamic(() => import("@/components/Process").then(mod => mod.Process));
 const SalaryGraph = dynamic(() => import("@/components/SalaryGraph").then(mod => mod.SalaryGraph));
 const Pricing = dynamic(() => import("@/components/Pricing").then(mod => mod.Pricing));
@@ -52,6 +55,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-background relative z-10 overflow-x-hidden">
       <Problem />
+      <Services />
       <div className="pt-24 md:pt-32 relative">
         {/* Dynamic Background Parallax Orbs */}
       <motion.div style={{ y: yParallax }} className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[800px] opacity-20 pointer-events-none z-0">
@@ -192,6 +196,11 @@ export default function ServicesPage() {
               </div>
             </div>
           </section>
+
+          {/* Interactive Proof for ATS Resume */}
+          <div className="w-full relative z-20">
+            <ATSScanner />
+          </div>
 
           {/* Service 2: LinkedIn SEO */}
           <section className="flex flex-col md:flex-row-reverse gap-12 items-center relative">
@@ -409,6 +418,11 @@ export default function ServicesPage() {
               </motion.div>
             </div>
           </section>
+
+          {/* Interactive Proof for Dev Portfolio */}
+          <div className="w-full relative z-20">
+            <ResumeSlider />
+          </div>
         </div>
 
       </div>
