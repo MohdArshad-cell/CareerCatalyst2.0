@@ -93,7 +93,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
 
   return (
     <motion.a
-      href="#pricing"
+      href="/services#pricing"
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

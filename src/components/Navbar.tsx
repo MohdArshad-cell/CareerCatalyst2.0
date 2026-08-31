@@ -21,8 +21,8 @@ export function Navbar() {
     { name: "Services", href: "/#services" },
     { name: "Details", href: "/services" },
     { name: "Proof", href: "/#proof" },
-    { name: "Pricing", href: "/#pricing" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "Pricing", href: "/services#pricing" },
+    { name: "FAQ", href: "/services#faq" },
   ];
 
   return (
@@ -61,7 +61,7 @@ export function Navbar() {
               ))}
             </nav>
 
-            <a href="/#pricing" className="relative hidden md:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
+            <a href="/services#pricing" className="relative hidden md:block px-6 py-2.5 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-xs uppercase tracking-widest font-bold rounded-full hover:bg-primary-600 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all overflow-hidden group">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] z-0" />
               <div className="absolute inset-0 rounded-full border border-primary-500/50 animate-[ping_3s_ease-in-out_infinite] opacity-30 pointer-events-none" />
@@ -97,7 +97,7 @@ export function Navbar() {
                   </a>
                 ))}
                 <a 
-                  href="/#pricing" 
+                  href="/services#pricing" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full px-5 py-3 bg-primary-600/20 text-primary-400 border border-primary-500/50 text-center font-bold font-mono text-sm uppercase tracking-widest rounded-lg mt-2"
                 >

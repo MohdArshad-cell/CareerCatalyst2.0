@@ -5,6 +5,12 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedM
 import { CheckCircle2, ArrowRight, FileText, Search, LayoutTemplate, Star, Zap, Code2, LineChart, Target } from "lucide-react";
 import dynamic from "next/dynamic";
 
+import { Problem } from "@/components/Problem";
+
+const Process = dynamic(() => import("@/components/Process").then(mod => mod.Process));
+const SalaryGraph = dynamic(() => import("@/components/SalaryGraph").then(mod => mod.SalaryGraph));
+const Pricing = dynamic(() => import("@/components/Pricing").then(mod => mod.Pricing));
+const FAQ = dynamic(() => import("@/components/FAQ").then(mod => mod.FAQ));
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
 
 export default function ServicesPage() {
@@ -44,8 +50,10 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background relative z-10 pt-24 md:pt-32 overflow-x-hidden">
-      {/* Dynamic Background Parallax Orbs */}
+    <main className="min-h-screen bg-background relative z-10 overflow-x-hidden">
+      <Problem />
+      <div className="pt-24 md:pt-32 relative">
+        {/* Dynamic Background Parallax Orbs */}
       <motion.div style={{ y: yParallax }} className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[800px] opacity-20 pointer-events-none z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 via-accent-500/30 to-emerald-500/30 blur-[120px] rounded-full mix-blend-screen animate-[pulse_4s_ease-in-out_infinite]" />
       </motion.div>
@@ -403,23 +411,14 @@ export default function ServicesPage() {
           </section>
         </div>
 
-        <div className="mt-40 text-center flex flex-col items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="p-[1px] bg-gradient-to-r from-primary-500 via-accent-500 to-emerald-500 rounded-full shadow-[0_0_40px_rgba(99,102,241,0.3)] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)] transition-shadow duration-500"
-          >
-            <a 
-              href="/#pricing" 
-              className="inline-flex items-center gap-3 px-10 py-5 bg-black hover:bg-zinc-900 text-white font-bold rounded-full transition-all text-lg tracking-wide uppercase"
-            >
-              Ready to Upgrade? View Pricing
-              <ArrowRight className="w-6 h-6 text-emerald-400" />
-            </a>
-          </motion.div>
-        </div>
       </div>
+      </div>
+      
+      <Process />
+      <SalaryGraph />
+      <Pricing />
+      <FAQ />
+
       <Footer />
     </main>
   );
