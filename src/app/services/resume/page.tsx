@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, FileText, Code2, Target, Crosshair } from "lucide-react";
+import { CheckCircle2, ArrowRight, FileText, Code2, Target, Crosshair, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const ATSScanner = dynamic(() => import("@/components/ATSScanner").then(mod => mod.ATSScanner));
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
@@ -14,6 +15,11 @@ export default function ResumeServicePage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] bg-blue-900/10 blur-[150px] rounded-full pointer-events-none z-0" />
       
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 mb-24">
+        <Link href="/services" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors mb-12 mt-4 font-medium group">
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Services
+        </Link>
+        
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -43,30 +49,30 @@ export default function ResumeServicePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
-                <img src="/resumes/elegant_preview.png" alt="Elegant Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
-              </div>
+              <a href="/resumes/elegant_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+                <img src="/resumes/elegant_preview.png" alt="Elegant Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
+              </a>
               <h3 className="text-xl font-bold text-white text-center">Elegant Template</h3>
             </div>
             
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
-                <img src="/resumes/modern_line_preview.png" alt="Modern Line Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
-              </div>
+              <a href="/resumes/modern_line_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+                <img src="/resumes/modern_line_preview.png" alt="Modern Line Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
+              </a>
               <h3 className="text-xl font-bold text-white text-center">Modern Line Template</h3>
             </div>
 
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
-                <img src="/resumes/one_column_preview.png" alt="One Column Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
-              </div>
+              <a href="/resumes/one_column_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+                <img src="/resumes/one_column_preview.png" alt="One Column Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
+              </a>
               <h3 className="text-xl font-bold text-white text-center">One Column Template</h3>
             </div>
 
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
-                <img src="/resumes/professional_preview.png" alt="Professional Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
-              </div>
+              <a href="/resumes/professional_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+                <img src="/resumes/professional_preview.png" alt="Professional Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
+              </a>
               <h3 className="text-xl font-bold text-white text-center">Professional Template</h3>
             </div>
           </div>

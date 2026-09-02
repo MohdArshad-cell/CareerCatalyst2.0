@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const ResumeSlider = dynamic(() => import("@/components/ResumeSlider").then(mod => mod.ResumeSlider));
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
@@ -14,6 +15,11 @@ export default function PortfolioServicePage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] bg-emerald-900/10 blur-[150px] rounded-full pointer-events-none z-0" />
       
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 mb-24">
+        <Link href="/services" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors mb-12 mt-4 font-medium group">
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Services
+        </Link>
+
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
