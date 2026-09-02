@@ -58,10 +58,9 @@ export function FloatingChat() {
 
     try {
       // Format history for Gemini API
-      const historyToFormat = [...messages, userMsg];
-      
-      // We skip the very first greeting message to save tokens if we want, 
-      // but let's include it so the model knows what was said.
+      // Gemini requires the first message in history to be from 'user'.
+      // We skip the initial bot greeting (messages.slice(1)) to ensure this.
+      const historyToFormat = [...messages.slice(1), userMsg];
       const formattedHistory: ChatHistoryPart[] = historyToFormat.map((msg) => ({
         role: msg.sender === "bot" ? "model" : "user",
         parts: [{ text: msg.text }],
