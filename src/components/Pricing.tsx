@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 import { motion } from "framer-motion";
 import { CheckCircle2, Tag } from "lucide-react";
 import { TiltCard } from "./TiltCard";
@@ -53,57 +53,9 @@ const oneTimeTiers = [
   }
 ];
 
-const monthlyTiers = [
-  {
-    name: "Interview Prep Lite",
-    price: "$49",
-    roi: "< cost of one LeetCode premium",
-    description: "Monthly access to our private community and ATS scanner.",
-    features: [
-      "Unlimited ATS Scans",
-      "Private Discord Community",
-      "Weekly Group Q&A",
-      "Resume Templates"
-    ],
-    highlighted: false,
-    cta: "Subscribe Monthly",
-    billingCycle: "/month"
-  },
-  {
-    name: "1-on-1 Mentorship",
-    price: "$199",
-    roi: "High-impact career coaching",
-    description: "Direct mentorship to guide you through the entire high-stakes hiring process.",
-    features: [
-      "Everything in Lite",
-      "2x Monthly 1-on-1 Strategy Calls",
-      "Mock Interviews (Behavioral & Tech)",
-      "Direct Slack Access to Mentors"
-    ],
-    highlighted: true,
-    cta: "Apply for Mentorship",
-    billingCycle: "/month"
-  },
-  {
-    name: "Done-For-You Placements",
-    price: "$499",
-    roi: "We apply for you",
-    description: "The ultimate white-glove service. We source, filter, and apply for you.",
-    features: [
-      "Everything in Mentorship",
-      "50x High-Quality Applications/mo",
-      "Custom Outreach to Recruiters",
-      "Salary Negotiation Support"
-    ],
-    highlighted: false,
-    cta: "Join Waitlist",
-    billingCycle: "/month"
-  }
-];
+
 
 export function Pricing() {
-  const [isMonthly, setIsMonthly] = useState(false);
-  const activeTiers = isMonthly ? monthlyTiers : oneTimeTiers;
 
   return (
     <section id="pricing" className="py-16 md:py-32 relative overflow-hidden flex flex-col items-center">
@@ -140,39 +92,11 @@ export function Pricing() {
             No ambiguous pricing. Simple, flat-rate tiers designed for maximum ROI.
           </motion.p>
 
-          {/* Dynamic Pricing Toggle UI */}
-          <div className="flex items-center bg-zinc-900/80 border border-white/10 rounded-full p-1.5 relative z-20 backdrop-blur-xl shadow-2xl">
-            <button
-              onClick={() => setIsMonthly(false)}
-              className={`relative px-8 py-3 text-sm font-bold tracking-widest uppercase rounded-full transition-colors z-10 ${!isMonthly ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
-            >
-              One-Time
-              {!isMonthly && (
-                <motion.div
-                  layoutId="pricing-toggle"
-                  className="absolute inset-0 bg-primary-600 rounded-full -z-10 shadow-[0_0_20px_rgba(99,102,241,0.5)]"
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                />
-              )}
-            </button>
-            <button
-              onClick={() => setIsMonthly(true)}
-              className={`relative px-8 py-3 text-sm font-bold tracking-widest uppercase rounded-full transition-colors z-10 ${isMonthly ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
-            >
-              Monthly Mentorship
-              {isMonthly && (
-                <motion.div
-                  layoutId="pricing-toggle"
-                  className="absolute inset-0 bg-primary-600 rounded-full -z-10 shadow-[0_0_20px_rgba(99,102,241,0.5)]"
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                />
-              )}
-            </button>
-          </div>
+
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch relative" style={{ perspective: "2000px" }}>
-          {activeTiers.map((tier, index) => (
+          {oneTimeTiers.map((tier, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
