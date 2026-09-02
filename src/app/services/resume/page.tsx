@@ -219,41 +219,42 @@ export default function ResumeServicePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 overflow-y-auto"
+            className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
             onClick={() => setLightboxImage(null)}
           >
-            <div className="absolute top-6 left-6 md:top-12 md:left-12 z-[110]">
-              <button 
-                onClick={(e) => { e.stopPropagation(); setLightboxImage(null); }}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span>Back to Page</span>
-              </button>
-            </div>
-            
-            <div className="absolute top-6 right-6 md:top-12 md:right-12 z-[110]">
-              <button 
-                onClick={(e) => { e.stopPropagation(); setLightboxImage(null); }}
-                className="p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.95, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl my-auto"
+              exit={{ scale: 0.95, opacity: 0, y: 10 }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="relative w-full max-w-5xl flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src={lightboxImage} 
-                alt="Template Preview Fullscreen" 
-                className="w-full h-auto rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
-              />
+              {/* Controls */}
+              <div className="w-full flex justify-between items-center mb-4">
+                <button 
+                  onClick={() => setLightboxImage(null)}
+                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="font-medium text-sm">Back to Page</span>
+                </button>
+                <button 
+                  onClick={() => setLightboxImage(null)}
+                  className="p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Image Container - Constrained to viewport height */}
+              <div className="relative w-full flex justify-center bg-zinc-900/50 rounded-2xl p-2 border border-white/10 shadow-2xl">
+                <img 
+                  src={lightboxImage} 
+                  alt="Template Preview Fullscreen" 
+                  className="max-w-full max-h-[75vh] object-contain rounded-xl"
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}
