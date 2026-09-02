@@ -2,7 +2,8 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ArrowRight, FileText, Code2, Target, Crosshair, ArrowLeft, X } from "lucide-react";
@@ -13,6 +14,11 @@ const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Foote
 
 export default function ResumeServicePage() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <main className="min-h-screen bg-background relative z-10 overflow-x-hidden pt-24 md:pt-32">
@@ -212,53 +218,56 @@ export default function ResumeServicePage() {
 
       <Footer />
 
-      {/* Lightbox Overlay */}
-      <AnimatePresence>
-        {lightboxImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
-            onClick={() => setLightboxImage(null)}
-          >
+      {/* Lightbox Overlay (Portaled to body to escape transform containing blocks) */}
+      {mounted && createPortal(
+        <AnimatePresence>
+          {lightboxImage && (
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 10 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 10 }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="relative w-full max-w-5xl flex flex-col items-center"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
+              onClick={() => setLightboxImage(null)}
             >
-              {/* Controls */}
-              <div className="w-full flex justify-between items-center mb-4">
-                <button 
-                  onClick={() => setLightboxImage(null)}
-                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  <span className="font-medium text-sm">Back to Page</span>
-                </button>
-                <button 
-                  onClick={() => setLightboxImage(null)}
-                  className="p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0, y: 10 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.95, opacity: 0, y: 10 }}
+                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                className="relative w-full max-w-5xl flex flex-col items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Controls */}
+                <div className="w-full flex justify-between items-center mb-4">
+                  <button 
+                    onClick={() => setLightboxImage(null)}
+                    className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    <span className="font-medium text-sm">Back to Page</span>
+                  </button>
+                  <button 
+                    onClick={() => setLightboxImage(null)}
+                    className="p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
 
-              {/* Image Container - Constrained to viewport height */}
-              <div className="relative w-full flex justify-center bg-zinc-900/50 rounded-2xl p-2 border border-white/10 shadow-2xl">
-                <img 
-                  src={lightboxImage} 
-                  alt="Template Preview Fullscreen" 
-                  className="max-w-full max-h-[75vh] object-contain rounded-xl"
-                />
-              </div>
+                {/* Image Container - Constrained to viewport height */}
+                <div className="relative w-full flex justify-center bg-zinc-900/50 rounded-2xl p-2 border border-white/10 shadow-2xl">
+                  <img 
+                    src={lightboxImage} 
+                    alt="Template Preview Fullscreen" 
+                    className="max-w-full max-h-[85vh] object-contain rounded-xl"
+                  />
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </main>
   );
 }
