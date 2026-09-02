@@ -1,14 +1,19 @@
 "use client";
 
+"use client";
+
+import { useState } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, FileText, Code2, Target, Crosshair, ArrowLeft } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, ArrowRight, FileText, Code2, Target, Crosshair, ArrowLeft, X } from "lucide-react";
 import Link from "next/link";
 
 const ATSScanner = dynamic(() => import("@/components/ATSScanner").then(mod => mod.ATSScanner));
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
 
 export default function ResumeServicePage() {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen bg-background relative z-10 overflow-x-hidden pt-24 md:pt-32">
       {/* Background Effects */}
@@ -49,30 +54,30 @@ export default function ResumeServicePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <a href="/resumes/elegant_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+              <div onClick={() => setLightboxImage("/resumes/elegant_preview.png")} className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
                 <img src="/resumes/elegant_preview.png" alt="Elegant Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
-              </a>
+              </div>
               <h3 className="text-xl font-bold text-white text-center">Elegant Template</h3>
             </div>
             
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <a href="/resumes/modern_line_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+              <div onClick={() => setLightboxImage("/resumes/modern_line_preview.png")} className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
                 <img src="/resumes/modern_line_preview.png" alt="Modern Line Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
-              </a>
+              </div>
               <h3 className="text-xl font-bold text-white text-center">Modern Line Template</h3>
             </div>
 
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <a href="/resumes/one_column_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+              <div onClick={() => setLightboxImage("/resumes/one_column_preview.png")} className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
                 <img src="/resumes/one_column_preview.png" alt="One Column Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
-              </a>
+              </div>
               <h3 className="text-xl font-bold text-white text-center">One Column Template</h3>
             </div>
 
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
-              <a href="/resumes/professional_preview.png" target="_blank" rel="noopener noreferrer" className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
+              <div onClick={() => setLightboxImage("/resumes/professional_preview.png")} className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5 block cursor-pointer">
                 <img src="/resumes/professional_preview.png" alt="Professional Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
-              </a>
+              </div>
               <h3 className="text-xl font-bold text-white text-center">Professional Template</h3>
             </div>
           </div>
@@ -206,6 +211,53 @@ export default function ResumeServicePage() {
       </div>
 
       <Footer />
+
+      {/* Lightbox Overlay */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 overflow-y-auto"
+            onClick={() => setLightboxImage(null)}
+          >
+            <div className="absolute top-6 left-6 md:top-12 md:left-12 z-[110]">
+              <button 
+                onClick={(e) => { e.stopPropagation(); setLightboxImage(null); }}
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Back to Page</span>
+              </button>
+            </div>
+            
+            <div className="absolute top-6 right-6 md:top-12 md:right-12 z-[110]">
+              <button 
+                onClick={(e) => { e.stopPropagation(); setLightboxImage(null); }}
+                className="p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all backdrop-blur-md"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-5xl my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={lightboxImage} 
+                alt="Template Preview Fullscreen" 
+                className="w-full h-auto rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
