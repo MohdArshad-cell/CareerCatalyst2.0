@@ -66,7 +66,7 @@ export function EasterEgg() {
               You found the secret.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Engineers who know how to inspect code and find hidden easter eggs deserve to be hired at top tech companies. 
+              Professionals who know how to inspect code and find hidden easter eggs deserve to be hired at top companies. 
             </p>
             <div className="bg-green-500/10 border border-green-500/20 p-6 rounded-xl mb-8">
               <div className="text-xs text-green-500 font-mono uppercase tracking-widest mb-2">Apply this code at checkout</div>

@@ -16,9 +16,9 @@ const services = [
     borderColor: "border-blue-500/20",
     href: "/services/resume",
     features: [
-      { label: "Format", desc: <>Industry-standard <span className="text-blue-400 font-semibold bg-blue-400/10 px-1.5 py-0.5 rounded border border-blue-400/20">single-column LaTeX</span> / clean formatting.</> },
+      { label: "Format", desc: <>Industry-standard <span className="text-blue-400 font-semibold bg-blue-400/10 px-1.5 py-0.5 rounded border border-blue-400/20">clean formatting</span>.</> },
       { label: "Content", desc: <>Action-Verb + Context + <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">Metric (XYZ Framework).</span></> },
-      { label: "Optimization", desc: <>Hard tech stack mapping matching <span className="text-blue-400 font-semibold bg-blue-400/10 px-1.5 py-0.5 rounded border border-blue-400/20">current US job descriptions.</span></> },
+      { label: "Optimization", desc: <>Hard skill mapping matching <span className="text-blue-400 font-semibold bg-blue-400/10 px-1.5 py-0.5 rounded border border-blue-400/20">current Fortune 500 job descriptions.</span></> },
     ]
   },
   {
@@ -31,14 +31,14 @@ const services = [
     borderColor: "border-indigo-500/20",
     href: "/services/linkedin",
     features: [
-      { label: "Headline & Summary", desc: <><span className="text-indigo-400 font-semibold bg-indigo-400/10 px-1.5 py-0.5 rounded border border-indigo-400/20">High-ranking search keywords</span> for US technical recruiters.</> },
-      { label: "Experience", desc: <>Bullet points tailored to show <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">leadership and engineering depth.</span></> },
+      { label: "Headline & Summary", desc: <><span className="text-indigo-400 font-semibold bg-indigo-400/10 px-1.5 py-0.5 rounded border border-indigo-400/20">High-ranking search keywords</span> for top-tier global recruiters.</> },
+      { label: "Experience", desc: <>Bullet points tailored to show <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">leadership and professional depth.</span></> },
       { label: "Featured Section", desc: <>Best projects and <span className="text-indigo-400 font-semibold bg-indigo-400/10 px-1.5 py-0.5 rounded border border-indigo-400/20">proof-of-work highlight.</span></> },
     ]
   },
   {
     icon: LayoutTemplate,
-    title: "Fast-Loading Modern Developer Portfolio",
+    title: "Fast-Loading Modern Professional Portfolio",
     price: "$69",
     glowColor: "rgba(16, 185, 129, 0.15)", // emerald-500
     iconColor: "text-emerald-400",
@@ -46,8 +46,8 @@ const services = [
     borderColor: "border-emerald-500/20",
     href: "/services/portfolio",
     features: [
-      { label: "Tech Stack", desc: <>Modern responsive UI <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-1.5 py-0.5 rounded border border-emerald-400/20">(Next.js / Tailwind CSS).</span></> },
-      { label: "Content", desc: <>Interactive demos, live links, and <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">GitHub architecture breakdown.</span></> },
+      { label: "Architecture", desc: <>Modern responsive UI <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-1.5 py-0.5 rounded border border-emerald-400/20">(Next.js / Tailwind CSS).</span></> },
+      { label: "Content", desc: <>Interactive demos, live links, and <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">detailed impact breakdown.</span></> },
       { label: "Conversion", desc: <><span className="text-emerald-400 font-semibold bg-emerald-400/10 px-1.5 py-0.5 rounded border border-emerald-400/20">Direct Calendly/email</span> contact integration.</> },
     ]
   }

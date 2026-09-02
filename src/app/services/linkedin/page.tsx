@@ -87,8 +87,8 @@ export default function LinkedinServicePage() {
                   className={`text-lg font-medium mb-2 ${isOptimized ? 'text-indigo-400' : 'text-zinc-400'}`}
                 >
                   {isOptimized 
-                    ? "Senior Frontend Engineer | React, TypeScript, Next.js | Scaled Web Apps to 1M+ Users" 
-                    : "Software Engineer at XYZ"}
+                    ? "Senior Professional | Strategy, Leadership, Delivery | Scaled Operations to $1M+ Revenue" 
+                    : "Professional at XYZ"}
                 </motion.div>
                 
                 <div className="text-sm text-zinc-500">San Francisco Bay Area · {isOptimized ? '500+ connections' : '150 connections'}</div>
@@ -104,9 +104,9 @@ export default function LinkedinServicePage() {
                 className="text-zinc-300 text-sm leading-relaxed"
               >
                 {isOptimized ? (
-                  <p>Product-focused Senior Frontend Engineer with 6+ years of experience building scalable web applications. Expert in <strong>React ecosystem (Next.js, Redux, TypeScript)</strong> and modern cloud architecture. Led a team of 4 engineers to migrate legacy monolithic architecture to microservices, improving page load speed by 40% and boosting conversion rates.</p>
+                  <p>Results-driven Senior Professional with 6+ years of experience building scalable solutions. Expert in <strong>cross-functional leadership (Strategy, Operations, Agile)</strong> and team management. Led a cross-departmental team to migrate legacy processes to modern frameworks, improving delivery speed by 40% and boosting conversion rates.</p>
                 ) : (
-                  <p>I am a software developer with experience in coding web applications. I like working in teams and learning new technologies. Always looking for new opportunities.</p>
+                  <p>I am a professional with experience in operations. I like working in teams and learning new skills. Always looking for new opportunities.</p>
                 )}
               </motion.div>
             </div>
@@ -119,7 +119,7 @@ export default function LinkedinServicePage() {
               >
                 <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-3">Algorithm-Indexed Keywords</div>
                 <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["React", "System Architecture", "AWS", "Node.js", "GraphQL", "TypeScript", "Microservices"].map((skill, i) => (
+                  {["Leadership", "Strategy", "Operations", "Agile", "Management", "Delivery", "Scaling"].map((skill, i) => (
                     <span key={i} className="px-3 py-1.5 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-lg">
                       {skill}
                     </span>
@@ -162,7 +162,7 @@ export default function LinkedinServicePage() {
                   <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white text-xs">IN</div>
                   <div className="flex-1 bg-white/10 rounded overflow-hidden flex items-center px-3 py-1.5">
                     <Search className="w-4 h-4 text-white/50 mr-2" />
-                    <span className="text-white/80 text-sm">"React" AND "AWS" AND "TypeScript"</span>
+                    <span className="text-white/80 text-sm">"Strategy" AND "Leadership" AND "Agile"</span>
                   </div>
                 </div>
                 
@@ -175,16 +175,16 @@ export default function LinkedinServicePage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="text-white font-semibold hover:underline cursor-pointer">Alex Engineer</h4>
+                        <h4 className="text-white font-semibold hover:underline cursor-pointer">Alex Professional</h4>
                         <span className="text-xs px-2 py-0.5 bg-yellow-500/20 text-yellow-500 rounded">Open to work</span>
                       </div>
                       <p className="text-zinc-300 text-sm mt-1">
-                        Senior Frontend Engineer | <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">React</span>, <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">TypeScript</span>, Next.js | Scaled Web Apps
+                        Senior Professional | <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">Strategy</span>, <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">Leadership</span>, Agile | Scaled Operations
                       </p>
                       <p className="text-zinc-500 text-xs mt-1">San Francisco Bay Area</p>
                       
                       <div className="mt-3 text-xs text-zinc-400">
-                        <span className="text-zinc-300 font-medium">Past:</span> Software Engineer at Amazon · Experience with <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">AWS</span> Cloud...
+                        <span className="text-zinc-300 font-medium">Past:</span> Manager at GlobalCorp · Experience with <span className="bg-yellow-500/30 text-yellow-200 px-1 rounded">Agile</span>...
                       </div>
                     </div>
                   </div>

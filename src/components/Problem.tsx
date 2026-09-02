@@ -75,7 +75,7 @@ export function Problem() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light mb-12"
           >
-            If you are an international student (F1-OPT) or early-career engineer, the generic advice doesn't work for you anymore. Your application is failing at the algorithm layer.
+            If you are an ambitious professional, the generic advice doesn't work for you anymore. Your application is failing at the algorithm layer.
           </motion.p>
           
           <motion.div
@@ -87,7 +87,7 @@ export function Problem() {
           >
             <div className="text-red-400 font-bold text-4xl">75%</div>
             <div className="text-zinc-300 text-left text-sm md:text-base leading-snug">
-              of engineering resumes are <span className="font-bold text-white">rejected by ATS</span> before a human recruiter ever sees them.
+              of professional resumes are <span className="font-bold text-white">rejected by ATS</span> before a human recruiter ever sees them.
             </div>
           </motion.div>
         </div>

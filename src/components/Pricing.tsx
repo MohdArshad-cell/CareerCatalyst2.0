@@ -40,11 +40,11 @@ const oneTimeTiers = [
     name: "Full Career Stack",
     price: "$99",
     roi: "< 0.1% of a typical senior salary",
-    description: "The ultimate package. A complete digital engineering footprint.",
+    description: "The ultimate package. A complete digital professional footprint.",
     features: [
       "Resume + LinkedIn + Cover Letter",
       "Custom Deployed Web Portfolio",
-      "Next.js/Tailwind Tech Stack",
+      "Premium Design & Architecture",
       "Custom Domain setup guide"
     ],
     highlighted: false,
@@ -73,7 +73,7 @@ const monthlyTiers = [
     name: "1-on-1 Mentorship",
     price: "$199",
     roi: "High-impact career coaching",
-    description: "Direct mentorship to guide you through the entire US tech hiring process.",
+    description: "Direct mentorship to guide you through the entire high-stakes hiring process.",
     features: [
       "Everything in Lite",
       "2x Monthly 1-on-1 Strategy Calls",

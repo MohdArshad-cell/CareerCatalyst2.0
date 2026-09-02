@@ -70,7 +70,7 @@ export function MiniATSLeadMagnet() {
                   <textarea
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder="e.g., Helped fix bugs in the application and improved performance..."
+                    placeholder="e.g., Helped fix issues in the project and improved performance..."
                     className="w-full bg-black/50 border border-white/10 rounded-2xl p-6 text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/50 transition-all resize-none min-h-[120px]"
                   />
                   <div className="absolute bottom-4 right-4 text-xs font-mono text-zinc-600">
@@ -141,7 +141,7 @@ export function MiniATSLeadMagnet() {
                       <CheckCircle2 className="w-3 h-3" /> After (98% Match)
                     </div>
                     <p className="text-zinc-200 text-sm font-medium leading-relaxed mt-2">
-                      "Resolved 50+ high-priority software bugs using React and Node.js, reducing application crash rate by 15% and improving overall user retention across 10,000+ active sessions."
+                      "Resolved 50+ high-priority issues, reducing error rate by 15% and improving overall user retention across 10,000+ active sessions."
                     </p>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export function MiniATSLeadMagnet() {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Want the full cheat sheet?</h3>
                     <p className="text-zinc-400 text-sm max-w-sm">
-                      Get 50+ plug-and-play XYZ bullet points for React, Node, Python, and AWS engineers delivered straight to your inbox.
+                      Get 50+ plug-and-play XYZ bullet points for diverse professional roles delivered straight to your inbox.
                     </p>
                   </div>
                   

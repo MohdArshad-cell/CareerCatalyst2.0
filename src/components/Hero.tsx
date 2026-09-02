@@ -60,7 +60,7 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono uppercase tracking-widest mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.05)]">
             <Sparkles className="w-4 h-4 text-primary-400" />
-            Targeted for F1-OPT & Early Career
+            Targeted for Ambitious Professionals
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8 leading-[1.1]">
@@ -71,7 +71,7 @@ export function Hero() {
           </h1>
           
           <p className="text-lg md:text-2xl text-zinc-400 mb-8 md:mb-12 max-w-lg leading-relaxed font-light">
-            We re-engineer your digital footprint so recruiters find you, not the other way around. Tailored exclusively for the US job market.
+            We re-engineer your digital footprint so recruiters find you, not the other way around. Tailored for the global job market.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 mb-8 w-full max-w-md">
@@ -98,7 +98,7 @@ export function Hero() {
               ))}
             </div>
             <div className="text-sm font-medium text-zinc-400">
-              Trusted by <span className="text-white font-bold">100+</span> engineers
+              Trusted by <span className="text-white font-bold">100+</span> professionals
             </div>
           </div>
 

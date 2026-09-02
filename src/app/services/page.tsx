@@ -19,7 +19,7 @@ export default function ServicesPage() {
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-400">Services</span>
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
-            We build the exact assets you need to bypass the ATS and dominate the tech job market.
+            We build the exact assets you need to bypass the ATS and dominate the job market.
           </p>
         </div>
         

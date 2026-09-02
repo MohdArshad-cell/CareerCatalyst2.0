@@ -11,7 +11,7 @@ const faqs: { question: string; answer: string; category: Category }[] = [
   // General & Eligibility
   {
     question: "Who is this service designed for?",
-    answer: "Our service is tailored specifically for software engineers, F1-OPT students, recent CS grads, and mid-level developers who are struggling to get past the initial resume screen at top tech companies.",
+    answer: "Our service is tailored specifically for ambitious professionals who are struggling to get past the initial resume screen at top-tier companies.",
     category: "General & Eligibility"
   },
   {
@@ -26,7 +26,7 @@ const faqs: { question: string; answer: string; category: Category }[] = [
   },
   {
     question: "What if I'm not located in the US?",
-    answer: "Our service is heavily tailored for the US job market, targeting US recruiter search patterns and formatting expectations. We can help you prepare your profile before you arrive or if you are seeking remote US roles.",
+    answer: "We help clients globally secure roles in their target countries. Our strategies apply universally to the modern hiring landscape and recruiter search patterns.",
     category: "General & Eligibility"
   },
   
@@ -43,7 +43,7 @@ const faqs: { question: string; answer: string; category: Category }[] = [
   },
   {
     question: "How exactly do you optimize my LinkedIn profile?",
-    answer: "We re-index your LinkedIn profile for recruiter search queries. We optimize your headline, summary, and experience sections with algorithmic keywords so you rank in the top 1% when recruiters search for your tech stack.",
+    answer: "We re-index your LinkedIn profile for recruiter search queries. We optimize your headline, summary, and experience sections with algorithmic keywords so you rank in the top 1% when recruiters search for your skill set.",
     category: "The Process"
   },
   {

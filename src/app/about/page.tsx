@@ -7,9 +7,9 @@ import { Terminal, Code2, Users, Target, ArrowRight } from "lucide-react";
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
 
 const stats = [
-  { label: "Engineers Placed", value: "100+", icon: Users },
+  { label: "Professionals Placed", value: "100+", icon: Users },
   { label: "Interview Rate Increase", value: "300%", icon: Target },
-  { label: "Lines of Code Reviewed", value: "1M+", icon: Code2 },
+  { label: "Resumes Overhauled", value: "1M+", icon: Code2 },
   { label: "ATS Systems Cracked", value: "50+", icon: Terminal },
 ];
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
             className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8 leading-[1.1]"
           >
             We got tired of seeing <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">brilliant engineers</span> rejected by <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">brilliant professionals</span> rejected by <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-400">mindless algorithms.</span>
           </motion.h1>
 
@@ -68,13 +68,13 @@ export default function AboutPage() {
               <h3 className="text-3xl font-bold text-white mb-6">The System is Broken.</h3>
               <div className="space-y-6 text-zinc-400 leading-relaxed font-light text-lg">
                 <p>
-                  We are former tech insiders—software engineers, technical recruiters, and hiring managers who have sat on the other side of the table at top-tier companies.
+                  We are former industry insiders—hiring managers, recruiters, and professionals who have sat on the other side of the table at top-tier companies.
                 </p>
                 <p>
-                  Every day, we watched Applicant Tracking Systems (ATS) automatically trash resumes from incredibly talented developers simply because they used a two-column PDF format, or lacked the exact boolean keywords the recruiter typed into LinkedIn.
+                  Every day, we watched Applicant Tracking Systems (ATS) automatically trash resumes from incredibly talented candidates simply because they used a two-column PDF format, or lacked the exact boolean keywords the recruiter typed into LinkedIn.
                 </p>
                 <p className="text-white font-medium">
-                  The tech hiring process isn't a meritocracy anymore. It's a search engine optimization game.
+                  The hiring process isn't a meritocracy anymore. It's a search engine optimization game.
                 </p>
               </div>
             </div>
@@ -89,13 +89,13 @@ export default function AboutPage() {
             <div className="pl-6 border-l-2 border-primary-500/30">
               <h4 className="text-xl font-bold text-white mb-3">We built the cheat code.</h4>
               <p className="text-zinc-400 leading-relaxed">
-                We founded Career Catalyst to level the playing field. We don't just give you generic career advice. We write your code. We compile your LaTeX. We structure your GitHub.
+                We founded Career Catalyst to level the playing field. We don't just give you generic career advice. We re-engineer your profile, compile your LaTeX, and restructure your digital presence.
               </p>
             </div>
             <div className="pl-6 border-l-2 border-accent-500/30">
-              <h4 className="text-xl font-bold text-white mb-3">F1-OPT & International Focus</h4>
+              <h4 className="text-xl font-bold text-white mb-3">Global Career Focus</h4>
               <p className="text-zinc-400 leading-relaxed">
-                We specialize in helping international students and entry/mid-level engineers bypass the intense gatekeeping of the US job market by making their profiles undeniable.
+                We specialize in helping professionals bypass intense industry gatekeeping across the global job market by making their profiles undeniable.
               </p>
             </div>
             <div className="pl-6 border-l-2 border-emerald-500/30">

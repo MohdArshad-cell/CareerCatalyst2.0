@@ -14,7 +14,7 @@ export function SalaryGraph() {
             The Cost of <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Being Ghosted</span>
           </h2>
           <p className="text-lg text-zinc-400">
-            Every month you spend applying with an unoptimized resume is lost engineering salary. Here is the typical 5-year financial trajectory.
+            Every month you spend applying with an unoptimized resume is lost salary. Here is the typical 5-year financial trajectory.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export function SalaryGraph() {
             <div className="flex items-center gap-4">
               <div className="w-4 h-4 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)] animate-pulse" />
               <div>
-                <div className="text-white font-bold">Optimized Engineer</div>
+                <div className="text-white font-bold">Optimized Professional</div>
                 <div className="text-zinc-500 text-sm font-mono mt-1">Hired quickly, scales to $250k</div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export function SalaryGraph() {
               className="absolute right-0 -top-8 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 md:px-4 py-1 md:py-2 rounded-xl text-xs md:text-sm font-bold flex items-center gap-2 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.2)]"
             >
               <DollarSign className="w-3 h-3 md:w-4 md:h-4" />
-              Senior TC Reached
+              Top Tier TC Reached
             </motion.div>
           </div>
         </div>

@@ -23,7 +23,7 @@ export const terminalLines = [
   "> Injecting keywords: React, Node...",
   "> Re-formatting to LaTeX standard...",
   "> Deploying Next.js portfolio...",
-  "> Status: Hired at Top Tech!"
+  "> Status: Hired at Top Companies!"
 ];
 
 export const recentNotifications = [

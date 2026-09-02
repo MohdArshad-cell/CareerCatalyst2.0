@@ -54,7 +54,7 @@ export default function ResumeServicePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Elite LaTeX Templates</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              Our templates are battle-tested across thousands of FAANG applications. They are designed to be 100% machine-readable while remaining visually dense and professional.
+              Our templates are battle-tested across thousands of Fortune 500 applications. They are designed to be 100% machine-readable while remaining visually dense and professional.
             </p>
           </div>
           

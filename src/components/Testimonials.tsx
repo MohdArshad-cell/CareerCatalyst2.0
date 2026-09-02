@@ -7,7 +7,7 @@ import { TiltCard } from "./TiltCard";
 const testimonials = [
   {
     name: "Alex C.",
-    role: "Backend Engineer (F1-OPT)",
+    role: "Backend Engineer",
     outcome: "Hired at Meta",
     quote: (
       <>
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: "Priya R.",
-    role: "Full-Stack Developer",
+    role: "Marketing Director",
     outcome: "Hired at Stripe",
     quote: (
       <>
@@ -27,11 +27,11 @@ const testimonials = [
   },
   {
     name: "David T.",
-    role: "Frontend Engineer",
+    role: "Product Manager",
     outcome: "Hired at Netflix",
     quote: (
       <>
-        My previous GitHub portfolio was generic. The team helped me frame my projects as <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">real business impact,</span> which directly helped me <span className="text-emerald-400 font-bold bg-emerald-400/10 px-1.5 py-0.5 rounded border border-emerald-400/20">pass the hiring manager round.</span>
+        My previous portfolio was generic. The team helped me frame my projects as <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">real business impact,</span> which directly helped me <span className="text-emerald-400 font-bold bg-emerald-400/10 px-1.5 py-0.5 rounded border border-emerald-400/20">pass the hiring manager round.</span>
       </>
     ),
   },
@@ -47,11 +47,11 @@ const testimonials = [
   },
   {
     name: "Kevin H.",
-    role: "DevOps Engineer",
+    role: "Operations Lead",
     outcome: "Hired at Databricks",
     quote: (
       <>
-        The portfolio completely changed how I interviewed. Interviewers were pulling it up on the call and we spent the time discussing my <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">system architecture diagrams</span> instead of generic trivia.
+        The portfolio completely changed how I interviewed. Interviewers were pulling it up on the call and we spent the time discussing my <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">detailed case studies</span> instead of generic trivia.
       </>
     ),
   }
