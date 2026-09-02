@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, ArrowRight, Loader2 } from "lucide-react";
 import { processChat } from "@/actions/chat";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   id: string;
@@ -150,7 +151,13 @@ export function FloatingChat() {
                         : "bg-primary-600 text-white self-end rounded-tr-sm"
                     }`}
                   >
-                    {msg.text}
+                    {msg.sender === "bot" ? (
+                      <div className="prose prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-a:text-primary-400 prose-ul:pl-4 prose-ol:pl-4 prose-li:my-0.5">
+                        <ReactMarkdown>{msg.text}</ReactMarkdown>
+                      </div>
+                    ) : (
+                      msg.text
+                    )}
                   </motion.div>
                 ))}
                 
