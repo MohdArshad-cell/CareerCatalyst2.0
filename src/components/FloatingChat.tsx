@@ -2,9 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, ArrowRight } from "lucide-react";
-
-type ChatStep = "greeting" | "role" | "goal" | "handoff";
+import { MessageCircle, X, Send, ArrowRight, Loader2 } from "lucide-react";
+import { processChat } from "@/actions/chat";
 
 interface Message {
   id: string;
@@ -12,19 +11,24 @@ interface Message {
   text: string;
 }
 
+// Format required by Gemini API
+interface ChatHistoryPart {
+  role: "user" | "model";
+  parts: [{ text: string }];
+}
+
 export function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
-  const [step, setStep] = useState<ChatStep>("greeting");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showWhatsAppButton, setShowWhatsAppButton] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
       sender: "bot",
-      text: "Hi there! 👋 To make sure we give you the best advice, what is your current or target role?",
+      text: "Hi there! 👋 I'm the Career Catalyst assistant. How can I help you bypass the ATS and secure top-tier interviews today?",
     },
   ]);
   const [inputValue, setInputValue] = useState("");
-  const [role, setRole] = useState("");
-  const [goal, setGoal] = useState("");
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -34,52 +38,62 @@ export function FloatingChat() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isLoading, showWhatsAppButton]);
 
-  const handleSend = () => {
-    if (!inputValue.trim()) return;
+  const handleSend = async () => {
+    if (!inputValue.trim() || isLoading) return;
 
-    // Add user message
+    const userText = inputValue.trim();
+    
+    // Add user message to UI immediately
     const userMsg: Message = {
       id: Date.now().toString(),
       sender: "user",
-      text: inputValue.trim(),
+      text: userText,
     };
     
     setMessages((prev) => [...prev, userMsg]);
     setInputValue("");
+    setIsLoading(true);
 
-    // Process logic based on step
-    if (step === "greeting") {
-      setRole(userMsg.text);
-      setStep("role");
+    try {
+      // Format history for Gemini API
+      const historyToFormat = [...messages, userMsg];
       
-      // Simulate typing delay
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: Date.now().toString(),
-            sender: "bot",
-            text: "Awesome. What is your primary career goal right now? (e.g., Break into top tier companies, increase salary, transition to a new field)",
-          },
-        ]);
-        setStep("goal");
-      }, 600);
-    } else if (step === "goal") {
-      setGoal(userMsg.text);
-      setStep("handoff");
+      // We skip the very first greeting message to save tokens if we want, 
+      // but let's include it so the model knows what was said.
+      const formattedHistory: ChatHistoryPart[] = historyToFormat.map((msg) => ({
+        role: msg.sender === "bot" ? "model" : "user",
+        parts: [{ text: msg.text }],
+      }));
+
+      // Call the Server Action
+      const response = await processChat(formattedHistory);
       
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: Date.now().toString(),
-            sender: "bot",
-            text: "Perfect, I've got the context. Let's get you connected with our team on WhatsApp to discuss the next steps!",
-          },
-        ]);
-      }, 600);
+      const botMsg: Message = {
+        id: (Date.now() + 1).toString(),
+        sender: "bot",
+        text: response.text,
+      };
+
+      setMessages((prev) => [...prev, botMsg]);
+      
+      if (response.showWhatsApp) {
+        setShowWhatsAppButton(true);
+      }
+    } catch (error) {
+      console.error("Chat error:", error);
+      setMessages((prev) => [
+        ...prev, 
+        {
+          id: (Date.now() + 1).toString(),
+          sender: "bot",
+          text: "I encountered a network issue. Please connect with our team directly on WhatsApp!"
+        }
+      ]);
+      setShowWhatsAppButton(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -88,11 +102,6 @@ export function FloatingChat() {
       e.preventDefault();
       handleSend();
     }
-  };
-
-  const getWhatsAppUrl = () => {
-    const text = `Hi! I am a ${role} and my goal is to ${goal}. I'd like to learn more about your services.`;
-    return `https://wa.me/917887096421?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -118,7 +127,7 @@ export function FloatingChat() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-sm">Career Catalyst</h3>
-                    <p className="text-zinc-400 text-xs">Typically replies instantly</p>
+                    <p className="text-zinc-400 text-xs">AI Assistant</p>
                   </div>
                 </div>
                 <button 
@@ -146,21 +155,31 @@ export function FloatingChat() {
                   </motion.div>
                 ))}
                 
-                {step === "handoff" && (
+                {isLoading && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-zinc-800/80 text-zinc-400 self-start rounded-2xl rounded-tl-sm border border-white/5 px-4 py-2.5 text-sm flex items-center gap-2"
+                  >
+                    <Loader2 className="w-4 h-4 animate-spin" /> Thinking...
+                  </motion.div>
+                )}
+
+                {showWhatsAppButton && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1 }}
+                    transition={{ delay: 0.5 }}
                     className="self-center mt-2 w-full"
                   >
                     <a
-                      href={getWhatsAppUrl()}
+                      href="https://wa.me/917887096421?text=Hi!%20I%20just%20spoke%20with%20your%20assistant.%20I'd%20like%20to%20learn%20more%20about%20your%20services."
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
                       className="w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.2)]"
                     >
-                      Continue to WhatsApp <ArrowRight className="w-4 h-4" />
+                      Connect on WhatsApp <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
                 )}
@@ -169,27 +188,26 @@ export function FloatingChat() {
               </div>
 
               {/* Input Area */}
-              {step !== "handoff" && (
-                <div className="p-3 bg-zinc-900/80 border-t border-white/10 backdrop-blur-md">
-                  <div className="relative flex items-center">
-                    <input
-                      type="text"
-                      value={inputValue}
-                      onChange={(e) => setInputValue(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      placeholder={step === "greeting" ? "Type your role..." : "Type your goal..."}
-                      className="w-full bg-black border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/50 transition-all"
-                    />
-                    <button
-                      onClick={handleSend}
-                      disabled={!inputValue.trim()}
-                      className="absolute right-1.5 p-2 bg-primary-600 hover:bg-primary-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white rounded-full transition-colors flex items-center justify-center"
-                    >
-                      <Send className="w-4 h-4" />
-                    </button>
-                  </div>
+              <div className="p-3 bg-zinc-900/80 border-t border-white/10 backdrop-blur-md">
+                <div className="relative flex items-center">
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder="Ask about our services..."
+                    disabled={isLoading}
+                    className="w-full bg-black border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/50 transition-all disabled:opacity-50"
+                  />
+                  <button
+                    onClick={handleSend}
+                    disabled={!inputValue.trim() || isLoading}
+                    className="absolute right-1.5 p-2 bg-primary-600 hover:bg-primary-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white rounded-full transition-colors flex items-center justify-center"
+                  >
+                    {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                  </button>
                 </div>
-              )}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
