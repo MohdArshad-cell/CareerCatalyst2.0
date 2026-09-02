@@ -35,8 +35,8 @@ export async function processChat(history: { role: string; parts: [{ text: strin
 
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-flash",
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash-lite",
       systemInstruction: SYSTEM_PROMPT
     });
 
@@ -68,7 +68,7 @@ export async function processChat(history: { role: string; parts: [{ text: strin
 
     // Pop the last message to use as the current prompt
     const currentMessage = history.pop()?.parts[0].text || "";
-    
+
     // Start chat session with remaining history
     const chatSession = model.startChat({
       generationConfig,
