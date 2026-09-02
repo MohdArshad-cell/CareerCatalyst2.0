@@ -41,33 +41,33 @@ export default function ResumeServicePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 hover:border-blue-500/50 transition-colors group">
-              <div className="aspect-[8.5/11] relative bg-zinc-900/50 rounded-xl overflow-hidden mb-4 p-2">
-                <img src="/resumes/elegant_preview.png" alt="Elegant Resume Template" className="object-contain object-top w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
+              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
+                <img src="/resumes/elegant_preview.png" alt="Elegant Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
-              <h3 className="text-lg font-bold text-white text-center">Elegant Template</h3>
+              <h3 className="text-xl font-bold text-white text-center">Elegant Template</h3>
             </div>
             
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 hover:border-blue-500/50 transition-colors group">
-              <div className="aspect-[8.5/11] relative bg-zinc-900/50 rounded-xl overflow-hidden mb-4 p-2">
-                <img src="/resumes/modern_line_preview.png" alt="Modern Line Resume Template" className="object-contain object-top w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
+              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
+                <img src="/resumes/modern_line_preview.png" alt="Modern Line Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
-              <h3 className="text-lg font-bold text-white text-center">Modern Line Template</h3>
+              <h3 className="text-xl font-bold text-white text-center">Modern Line Template</h3>
             </div>
 
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 hover:border-blue-500/50 transition-colors group">
-              <div className="aspect-[8.5/11] relative bg-zinc-900/50 rounded-xl overflow-hidden mb-4 p-2">
-                <img src="/resumes/one_column_preview.png" alt="One Column Resume Template" className="object-contain object-top w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
+              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
+                <img src="/resumes/one_column_preview.png" alt="One Column Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
-              <h3 className="text-lg font-bold text-white text-center">One Column Template</h3>
+              <h3 className="text-xl font-bold text-white text-center">One Column Template</h3>
             </div>
 
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 hover:border-blue-500/50 transition-colors group">
-              <div className="aspect-[8.5/11] relative bg-zinc-900/50 rounded-xl overflow-hidden mb-4 p-2">
-                <img src="/resumes/professional_preview.png" alt="Professional Resume Template" className="object-contain object-top w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-colors group flex flex-col justify-between">
+              <div className="bg-zinc-900/50 rounded-xl overflow-hidden mb-6 border border-white/5">
+                <img src="/resumes/professional_preview.png" alt="Professional Resume Template" className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
-              <h3 className="text-lg font-bold text-white text-center">Professional Template</h3>
+              <h3 className="text-xl font-bold text-white text-center">Professional Template</h3>
             </div>
           </div>
         </div>
