@@ -205,12 +205,18 @@ export default function ResumeServicePage() {
 
         <ATSScanner />
 
-        <div className="mt-24 text-center">
+        <div className="text-center bg-zinc-900/50 border border-white/10 rounded-3xl p-12 mt-24">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to beat the ATS?</h2>
+          <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
+            Stop missing out on high-paying opportunities because of unparseable designs. Let's optimize your resume today.
+          </p>
           <a 
-            href="/pricing"
-            className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg rounded-full transition-all shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] group"
+            href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20the%20ATS%20Resume%20service"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg rounded-full transition-all shadow-[0_0_30px_rgba(37,211,102,0.3)] hover:shadow-[0_0_50px_rgba(37,211,102,0.5)] group"
           >
-            Get Your ATS Resume
+            Message on WhatsApp
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
