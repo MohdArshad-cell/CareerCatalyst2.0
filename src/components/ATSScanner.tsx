@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, RotateCcw, AlertTriangle, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 import { atsStandardLogs as standardLogs, atsOptimizedLogs as optimizedLogs } from "@/data/constants";
 
@@ -146,10 +147,10 @@ export function ATSScanner() {
             animate={{ opacity: 1, y: 0 }}
             className="mt-12 text-center"
           >
-            <a href="#pricing" className="text-zinc-400 hover:text-white transition-colors border-b border-zinc-700 hover:border-white pb-1 font-medium inline-flex items-center gap-2">
+            <Link href="/pricing" className="text-zinc-400 hover:text-white transition-colors border-b border-zinc-700 hover:border-white pb-1 font-medium inline-flex items-center gap-2">
               Don&apos;t let your resume be the one on the left
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
+            </Link>
           </motion.div>
         )}
       </div>
