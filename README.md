@@ -43,7 +43,10 @@ The platform is designed to instantly communicate technical authority through a 
 ## ✨ Key Features
 
 - **🎬 Cinematic 3D UI:** Highly interactive floating mockups, magnetic buttons, parallax scrolling backgrounds, and orbital tech logos.
+- **🤖 AI Career Assistant:** Integrated real-time floating chat assistant powered by Gemini 1.5 Flash (`@ai-sdk/google`) to answer candidate questions instantly with streaming responses and `localStorage` persistence.
+- **📝 MDX Blog Engine:** Built-in high-performance blog using `next-mdx-remote` and `gray-matter` to serve technical career guides and case studies.
 - **🛡️ ATS Scanner Simulation:** A live-typing terminal simulation that visualizes the difference between a standard rejected resume and an optimized 99% match resume.
+- **💬 Direct WhatsApp Routing:** Dynamic CTA buttons that securely route leads directly to the founders' WhatsApp via environment variables.
 - **📱 100% Mobile Responsive:** Built with a "Mobile-First" Tailwind architecture that progressively enhances into a massive desktop experience, complete with `overflow-x-hidden` fluid layouts.
 - **🎛️ 3D Portfolio Cards:** Interactive, tilt-tracking cards that respond to mouse coordinates to create a depth-of-field 3D effect.
 - **⚡ Dynamic Rendering:** Next.js Server Components and `next/dynamic` lazy loading used to guarantee instant First Contentful Paint (FCP).
@@ -59,9 +62,15 @@ The platform is designed to instantly communicate technical authority through a 
 - **[React 18](https://react.dev/)** - UI Library
 
 ### Styling & Animation
-- **[Tailwind CSS v3](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[Framer Motion](https://www.framer.com/motion/)** - Production-ready animation library
 - **[Lucide React](https://lucide.dev/)** - Beautiful, consistent icon set
+
+### Backend, AI & Content
+- **[Vercel AI SDK](https://sdk.vercel.ai/)** - Streaming UI and chat state management (`ai` v3.1)
+- **[Google Gemini](https://ai.google.dev/)** - Gemini 1.5 Flash via `@ai-sdk/google`
+- **[Zod](https://zod.dev/)** - Strict API payload validation
+- **[MDX](https://mdxjs.com/) & [Gray-Matter](https://github.com/jonschlinkert/gray-matter)** - Markdown blog engine
 
 ---
 
@@ -103,17 +112,24 @@ Open `http://localhost:3000` in your browser.
 ├── public/                 # Static assets (images, icons)
 ├── src/
 │   ├── app/                
+│   │   ├── api/chat/       # Gemini AI streaming route with Zod validation
+│   │   ├── blog/           # MDX Blog routes and single post layouts
+│   │   ├── pricing/        # Standalone pricing page
+│   │   ├── services/       # Deep-dive service pages (resume, linkedin, portfolio)
+│   │   ├── about/          # About the founders and company story
 │   │   ├── globals.css     # Global Tailwind styles & CSS variables
 │   │   ├── layout.tsx      # Root layout, Next/Font config, Global UI (Nav/Footer)
-│   │   ├── page.tsx        # Homepage (Lazy loaded components)
-│   │   └── services/       # Services deep-dive route
+│   │   └── page.tsx        # Homepage (Lazy loaded components)
 │   │
-│   └── components/         # Reusable UI components
-│       ├── ATSScanner.tsx  # Live terminal scanner simulation
-│       ├── Hero.tsx        # Cinematic Hero section with 3D Orbit
-│       ├── TiltCard.tsx    # Reusable Framer Motion 3D tilt component
-│       ├── Navbar.tsx      # Responsive header
-│       └── ...
+│   ├── components/         # Reusable UI components
+│   │   ├── FloatingChat.tsx# AI Assistant floating UI bubble
+│   │   ├── ATSScanner.tsx  # Live terminal scanner simulation
+│   │   ├── Hero.tsx        # Cinematic Hero section with 3D Orbit
+│   │   ├── EasterEgg.tsx   # Matrix-style hidden easter egg
+│   │   ├── TiltCard.tsx    # Reusable Framer Motion 3D tilt component
+│   │   ├── Navbar.tsx      # Responsive header
+│   │   └── ...
+│   └── lib/                # Utility functions, MDX parsers, and constants
 └── package.json            # Dependencies & scripts
 ```
 
