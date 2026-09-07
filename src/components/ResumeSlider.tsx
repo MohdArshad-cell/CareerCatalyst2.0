@@ -4,6 +4,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 import { MoveHorizontal } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { PanInfo } from "framer-motion";
 
 export function ResumeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export function ResumeSlider() {
     return () => observer.disconnect();
   }, []);
 
-  const handleDrag = (e: any, info: any) => {
+  const handleDrag = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (!containerWidth || !containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     

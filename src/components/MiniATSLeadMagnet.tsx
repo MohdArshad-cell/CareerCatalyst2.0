@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, CheckCircle2, ChevronRight, Lock } from "lucide-react";
-
+import { Sparkles, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 export function MiniATSLeadMagnet() {
   const [inputText, setInputText] = useState("");
   const [status, setStatus] = useState<"idle" | "scanning" | "done">("idle");
@@ -131,7 +130,7 @@ export function MiniATSLeadMagnet() {
                       Before (12% Match)
                     </div>
                     <p className="text-zinc-500 text-sm mt-2">
-                      "{inputText}"
+                      &quot;{inputText}&quot;
                     </p>
                   </div>
                   
@@ -141,7 +140,7 @@ export function MiniATSLeadMagnet() {
                       <CheckCircle2 className="w-3 h-3" /> After (98% Match)
                     </div>
                     <p className="text-zinc-200 text-sm font-medium leading-relaxed mt-2">
-                      "Resolved 50+ high-priority issues, reducing error rate by 15% and improving overall user retention across 10,000+ active sessions."
+                      &quot;Resolved 50+ high-priority issues, reducing error rate by 15% and improving overall user retention across 10,000+ active sessions.&quot;
                     </p>
                   </div>
                 </div>

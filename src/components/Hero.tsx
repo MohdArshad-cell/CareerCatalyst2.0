@@ -3,25 +3,17 @@
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Sparkles, Activity, FileCheck, Target } from "lucide-react";
-import { useEffect, useState } from "react";
 import { MagneticButton } from "./MagneticButton";
 import { NetworkBackground } from "./NetworkBackground";
 import { Terminal } from "./Terminal";
 
 export function Hero() {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => setIsMounted(true), []);
-
   const shouldReduceMotion = useReducedMotion();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });
   const springY = useSpring(mouseY, { stiffness: 100, damping: 30 });
-
-  // Background Parallax
-  const bgX = useTransform(springX, [-1, 1], ["-2%", "2%"]);
-  const bgY = useTransform(springY, [-1, 1], ["-2%", "2%"]);
 
   // Mockup Parallax (moves opposite to mouse)
   const mockupX = useTransform(springX, [-1, 1], ["1%", "-1%"]);

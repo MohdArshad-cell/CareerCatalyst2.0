@@ -86,7 +86,7 @@ export function Proof() {
               <div className="bg-white/5 border border-red-500/30 rounded-t-3xl p-8 relative overflow-hidden backdrop-blur-md">
                 <div className="absolute top-0 right-0 px-4 py-1.5 bg-red-500/20 text-red-400 text-xs font-bold rounded-bl-2xl border-b border-l border-red-500/30">BEFORE</div>
                 <p className="text-zinc-500 font-mono text-sm leading-relaxed mt-2">
-                  "Worked on backend APIs using Java and Spring Boot for an e-commerce site."
+                  &quot;Worked on backend APIs using Java and Spring Boot for an e-commerce site.&quot;
                 </p>
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-950 rounded-full border border-white/10 flex items-center justify-center z-10 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
@@ -95,7 +95,7 @@ export function Proof() {
               <div className="bg-primary-900/20 border border-primary-500/40 rounded-b-3xl p-8 relative overflow-hidden backdrop-blur-md shadow-[0_20px_60px_rgba(99,102,241,0.2)]">
                 <div className="absolute top-0 right-0 px-4 py-1.5 bg-primary-500/20 text-primary-400 text-xs font-bold rounded-bl-2xl border-b border-l border-primary-500/40">AFTER (XYZ Framework)</div>
                 <p className="text-white font-mono text-sm leading-relaxed mt-2">
-                  "Architected <span className="text-primary-400 font-bold bg-primary-500/20 px-1 rounded">12+ RESTful microservices</span> using Spring Boot & Redis, reducing peak checkout latency by <span className="text-accent-400 font-bold bg-accent-500/20 px-1 rounded">35%</span> across <span className="text-primary-400 font-bold bg-primary-500/20 px-1 rounded">50k+ daily transactions</span>."
+                  &quot;Architected <span className="text-primary-400 font-bold bg-primary-500/20 px-1 rounded">12+ RESTful microservices</span> using Spring Boot & Redis, reducing peak checkout latency by <span className="text-accent-400 font-bold bg-accent-500/20 px-1 rounded">35%</span> across <span className="text-primary-400 font-bold bg-primary-500/20 px-1 rounded">50k+ daily transactions</span>.&quot;
                 </p>
               </div>
             </motion.div>

@@ -49,9 +49,9 @@ export function ExitPopup() {
               <AlertTriangle className="w-8 h-8 text-red-500" />
             </div>
             
-            <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Wait! Don't leave yet.</h3>
+            <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Wait! Don&apos;t leave yet.</h3>
             <p className="text-zinc-400 mb-8 leading-relaxed">
-              You're one step away from ending the ghosting cycle. Get a <strong className="text-white">free, no-obligation audit</strong> of your current resume and LinkedIn profile before you go.
+              You&apos;re one step away from ending the ghosting cycle. Get a <strong className="text-white">free, no-obligation audit</strong> of your current resume and LinkedIn profile before you go.
             </p>
             
             <div className="flex flex-col gap-4">
@@ -66,7 +66,7 @@ export function ExitPopup() {
                 onClick={() => setIsVisible(false)}
                 className="text-zinc-500 hover:text-zinc-300 text-sm font-medium transition-colors"
               >
-                No thanks, I'll keep applying the old way.
+                No thanks, I&apos;ll keep applying the old way.
               </button>
             </div>
           </motion.div>

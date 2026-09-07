@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Calendar, Globe } from "lucide-react";
+import { MessageCircle, Globe } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {

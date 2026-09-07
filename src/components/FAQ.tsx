@@ -171,7 +171,7 @@ export function FAQ() {
         <div className="max-w-4xl mx-auto space-y-4 min-h-[400px]">
           <AnimatePresence>
             {filteredFaqs.length > 0 ? (
-              filteredFaqs.map((faq, index) => {
+              filteredFaqs.map((faq) => {
                 const globalIndex = faqs.indexOf(faq);
                 return (
                   <motion.div
@@ -212,7 +212,7 @@ export function FAQ() {
                 animate={{ opacity: 1 }}
                 className="text-center py-20 text-zinc-500"
               >
-                No questions found matching "{searchQuery}".
+                No questions found matching &quot;{searchQuery}&quot;.
               </motion.div>
             )}
           </AnimatePresence>
@@ -227,7 +227,7 @@ export function FAQ() {
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.1)_0%,transparent_70%)] pointer-events-none" />
           
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Didn't find what you were looking for?</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Didn&apos;t find what you were looking for?</h3>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Our team is ready to answer any specific questions you have about our process, your unique situation, or our pricing.
           </p>

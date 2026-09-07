@@ -80,7 +80,7 @@ export function Testimonials() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8"
           >
-            Don't take our <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-primary-400 to-emerald-400 drop-shadow-[0_0_30px_rgba(45,212,191,0.3)]">word for it.</span>
+            Don&apos;t take our <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-primary-400 to-emerald-400 drop-shadow-[0_0_30px_rgba(45,212,191,0.3)]">word for it.</span>
           </motion.h2>
         </div>
 

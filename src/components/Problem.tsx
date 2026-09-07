@@ -36,7 +36,7 @@ const painPoints = [
     title: "Generic Portfolio",
     description: (
       <>
-        Generic GitHub projects that don't demonstrate <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">real system design</span> or business impact?
+        Generic GitHub projects that don&apos;t demonstrate <span className="text-white font-semibold bg-white/10 px-1.5 py-0.5 rounded">real system design</span> or business impact?
       </>
     ),
   },
@@ -66,7 +66,7 @@ export function Problem() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8 leading-[1.1]"
           >
-            You're Not Getting Ghosted Because <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_30px_rgba(248,113,113,0.3)]">You're Not Good Enough.</span>
+            You&apos;re Not Getting Ghosted Because <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_30px_rgba(248,113,113,0.3)]">You&apos;re Not Good Enough.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function Problem() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light mb-12"
           >
-            If you are an ambitious professional, the generic advice doesn't work for you anymore. Your application is failing at the algorithm layer.
+            If you are an ambitious professional, the generic advice doesn&apos;t work for you anymore. Your application is failing at the algorithm layer.
           </motion.p>
           
           <motion.div

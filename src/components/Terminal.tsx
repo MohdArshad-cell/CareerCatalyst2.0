@@ -12,8 +12,8 @@ export function Terminal() {
   
   useEffect(() => {
     if (shouldReduceMotion) {
-      setCurrentLine(lines.length);
-      return;
+      const timer = setTimeout(() => setCurrentLine(lines.length), 0);
+      return () => clearTimeout(timer);
     }
 
     if (currentLine >= lines.length) return;

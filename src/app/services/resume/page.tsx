@@ -1,5 +1,4 @@
-"use client";
-
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -17,7 +16,9 @@ export default function ResumeServicePage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => {
+      setMounted(true);
+    }, 0);
   }, []);
 
   return (
@@ -94,7 +95,7 @@ export default function ResumeServicePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">How We Engineer Your Resume</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              We don't just "proofread". We completely tear down your experience and rebuild it using algorithmic parsing strategies.
+              We don&apos;t just &quot;proofread&quot;. We completely tear down your experience and rebuild it using algorithmic parsing strategies.
             </p>
           </div>
 
@@ -108,20 +109,20 @@ export default function ResumeServicePage() {
                 <h3 className="text-2xl font-bold text-white">The XYZ Bullet Point Framework</h3>
               </div>
               <p className="text-zinc-400 mb-8 max-w-3xl leading-relaxed">
-                Google recruiters read a resume in 6 seconds. If your bullets start with "Responsible for..." you've already lost. We rewrite every single bullet point into the strict XYZ format: <strong className="text-white">Accomplished [X] as measured by [Y], by doing [Z].</strong>
+                Google recruiters read a resume in 6 seconds. If your bullets start with &quot;Responsible for...&quot; you&apos;ve already lost. We rewrite every single bullet point into the strict XYZ format: <strong className="text-white">Accomplished [X] as measured by [Y], by doing [Z].</strong>
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-500/5 border border-red-500/10 rounded-2xl p-6 relative">
                   <span className="absolute top-0 right-0 bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">BEFORE (WEAK)</span>
                   <p className="text-zinc-300 italic mt-4">
-                    "Responsible for rewriting the frontend of the main web application to make it faster and easier to maintain."
+                    &quot;Responsible for rewriting the frontend of the main web application to make it faster and easier to maintain.&quot;
                   </p>
                 </div>
                 <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-2xl p-6 relative">
                   <span className="absolute top-0 right-0 bg-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">AFTER (XYZ FORMAT)</span>
                   <p className="text-zinc-200 mt-4 leading-relaxed">
-                    "Engineered a high-throughput React dashboard migration (<strong className="text-emerald-400">Z</strong>), reducing Largest Contentful Paint by 45% (<strong className="text-emerald-400">Y</strong>) and increasing user retention for 10k+ enterprise clients (<strong className="text-emerald-400">X</strong>)."
+                    &quot;Engineered a high-throughput React dashboard migration (<strong className="text-emerald-400">Z</strong>), reducing Largest Contentful Paint by 45% (<strong className="text-emerald-400">Y</strong>) and increasing user retention for 10k+ enterprise clients (<strong className="text-emerald-400">X</strong>).&quot;
                   </p>
                 </div>
               </div>
@@ -158,7 +159,7 @@ export default function ResumeServicePage() {
             <div className="bg-black/50 border border-white/10 p-8 rounded-3xl">
               <h3 className="text-2xl font-bold text-white mb-4">Why we write in LaTeX</h3>
               <p className="text-zinc-400 leading-relaxed">
-                Canva and Word templates use tables, invisible columns, and complex formatting that ATS parsers like Workday and Greenhouse cannot read. If they can't parse your data, your score drops to 0, and you get auto-rejected.
+                Canva and Word templates use tables, invisible columns, and complex formatting that ATS parsers like Workday and Greenhouse cannot read. If they can&apos;t parse your data, your score drops to 0, and you get auto-rejected.
               </p>
             </div>
             <div className="bg-blue-500/10 border border-blue-500/20 p-8 rounded-3xl">
@@ -208,7 +209,7 @@ export default function ResumeServicePage() {
         <div className="text-center bg-zinc-900/50 border border-white/10 rounded-3xl p-12 mt-24">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to beat the ATS?</h2>
           <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
-            Stop missing out on high-paying opportunities because of unparseable designs. Let's optimize your resume today.
+            Stop missing out on high-paying opportunities because of unparseable designs. Let&apos;s optimize your resume today.
           </p>
           <a 
             href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20the%20ATS%20Resume%20service"

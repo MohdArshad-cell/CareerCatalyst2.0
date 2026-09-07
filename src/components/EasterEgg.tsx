@@ -1,10 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function EasterEgg() {
   const [activated, setActivated] = useState(false);
+  const [matrixItems, setMatrixItems] = useState<{ id: number; duration: number; delay: number; text: string }[]>([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMatrixItems(Array.from({ length: 500 }).map((_, i) => ({
+        id: i,
+        duration: Math.random() * 2 + 1,
+        delay: Math.random() * 2,
+        text: Math.random() > 0.5 ? "1" : "0"
+      })));
+    }, 0);
+  }, []);
   
   useEffect(() => {
     let input = "";
@@ -42,14 +54,14 @@ export function EasterEgg() {
         >
           {/* Falling Matrix Code Simulation */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 text-green-500 font-mono text-xs flex flex-wrap gap-2 p-4">
-            {[...Array(500)].map((_, i) => (
+            {matrixItems.map((item) => (
               <motion.span
-                key={i}
+                key={item.id}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: [0, 1, 0], y: 1000 }}
-                transition={{ duration: Math.random() * 2 + 1, repeat: Infinity, delay: Math.random() * 2 }}
+                transition={{ duration: item.duration, repeat: Infinity, delay: item.delay }}
               >
-                {Math.random() > 0.5 ? "1" : "0"}
+                {item.text}
               </motion.span>
             ))}
           </div>

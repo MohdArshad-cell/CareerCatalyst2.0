@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Problem } from "@/components/Problem";
 import { Services } from "@/components/Services";
 
 const Process = dynamic(() => import("@/components/Process").then(mod => mod.Process));

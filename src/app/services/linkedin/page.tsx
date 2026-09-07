@@ -136,7 +136,7 @@ export default function LinkedinServicePage() {
             <div className="order-2 md:order-1">
               <h3 className="text-3xl font-bold text-white mb-6">The Recruiter Dashboard View</h3>
               <p className="text-zinc-400 leading-relaxed mb-6 text-lg">
-                Recruiters use LinkedIn Recruiter Pro to search for candidates using strict Boolean queries. If your profile doesn't have the exact keywords they search for, you won't appear in their results.
+                Recruiters use LinkedIn Recruiter Pro to search for candidates using strict Boolean queries. If your profile doesn&apos;t have the exact keywords they search for, you won&apos;t appear in their results.
               </p>
               <ul className="space-y-4">
                 {[
@@ -162,7 +162,7 @@ export default function LinkedinServicePage() {
                   <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white text-xs">IN</div>
                   <div className="flex-1 bg-white/10 rounded overflow-hidden flex items-center px-3 py-1.5">
                     <Search className="w-4 h-4 text-white/50 mr-2" />
-                    <span className="text-white/80 text-sm">"Strategy" AND "Leadership" AND "Agile"</span>
+                    <span className="text-white/80 text-sm">&quot;Strategy&quot; AND &quot;Leadership&quot; AND &quot;Agile&quot;</span>
                   </div>
                 </div>
                 
@@ -270,7 +270,7 @@ export default function LinkedinServicePage() {
         <div className="text-center bg-zinc-900/50 border border-white/10 rounded-3xl p-12">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to rank at the top?</h2>
           <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
-            Stop missing out on high-paying opportunities because recruiters can't find you. Let's optimize your profile today.
+            Stop missing out on high-paying opportunities because recruiters can&apos;t find you. Let&apos;s optimize your profile today.
           </p>
           <a 
             href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20the%20LinkedIn%20Optimization%20service"

@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ArrowLeft } from "lucide-react";
+import { ComponentProps } from "react";
 
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
 
@@ -15,29 +16,29 @@ export async function generateStaticParams() {
 }
 
 const components = {
-  h1: (props: any) => <h1 className="text-3xl font-bold mt-12 mb-6 text-white leading-tight" {...props} />,
-  h2: (props: any) => <h2 className="text-2xl font-bold mt-10 mb-4 text-white leading-tight border-b border-white/10 pb-4" {...props} />,
-  h3: (props: any) => <h3 className="text-xl font-bold mt-8 mb-4 text-zinc-200" {...props} />,
-  p: (props: any) => <p className="text-zinc-400 text-lg leading-relaxed mb-6 font-light" {...props} />,
-  ul: (props: any) => <ul className="list-disc list-outside text-zinc-400 text-lg mb-6 pl-6 space-y-2 font-light marker:text-primary-500" {...props} />,
-  ol: (props: any) => <ol className="list-decimal list-outside text-zinc-400 text-lg mb-6 pl-6 space-y-2 font-light marker:text-primary-500" {...props} />,
-  li: (props: any) => <li className="pl-2" {...props} />,
-  strong: (props: any) => <strong className="font-semibold text-white" {...props} />,
-  blockquote: (props: any) => (
+  h1: (props: ComponentProps<"h1">) => <h1 className="text-3xl font-bold mt-12 mb-6 text-white leading-tight" {...props} />,
+  h2: (props: ComponentProps<"h2">) => <h2 className="text-2xl font-bold mt-10 mb-4 text-white leading-tight border-b border-white/10 pb-4" {...props} />,
+  h3: (props: ComponentProps<"h3">) => <h3 className="text-xl font-bold mt-8 mb-4 text-zinc-200" {...props} />,
+  p: (props: ComponentProps<"p">) => <p className="text-zinc-400 text-lg leading-relaxed mb-6 font-light" {...props} />,
+  ul: (props: ComponentProps<"ul">) => <ul className="list-disc list-outside text-zinc-400 text-lg mb-6 pl-6 space-y-2 font-light marker:text-primary-500" {...props} />,
+  ol: (props: ComponentProps<"ol">) => <ol className="list-decimal list-outside text-zinc-400 text-lg mb-6 pl-6 space-y-2 font-light marker:text-primary-500" {...props} />,
+  li: (props: ComponentProps<"li">) => <li className="pl-2" {...props} />,
+  strong: (props: ComponentProps<"strong">) => <strong className="font-semibold text-white" {...props} />,
+  blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote className="relative border-l-4 border-primary-500 bg-gradient-to-r from-primary-900/20 to-transparent py-5 px-6 rounded-r-xl my-8 italic text-zinc-300 shadow-[inset_4px_0_0_0_rgba(99,102,241,0.5)]" {...props} />
   ),
-  a: (props: any) => <a className="text-primary-400 hover:text-primary-300 transition-colors underline decoration-primary-500/30 underline-offset-4" {...props} />,
-  code: (props: any) => <code className="bg-white/5 border border-white/10 text-primary-300 px-1.5 py-0.5 rounded-md font-mono text-sm" {...props} />,
-  pre: (props: any) => <pre className="bg-black/50 border border-white/10 p-6 rounded-2xl overflow-x-auto mb-8 font-mono text-sm shadow-[0_0_30px_rgba(0,0,0,0.5)]" {...props} />,
+  a: (props: ComponentProps<"a">) => <a className="text-primary-400 hover:text-primary-300 transition-colors underline decoration-primary-500/30 underline-offset-4" {...props} />,
+  code: (props: ComponentProps<"code">) => <code className="bg-white/5 border border-white/10 text-primary-300 px-1.5 py-0.5 rounded-md font-mono text-sm" {...props} />,
+  pre: (props: ComponentProps<"pre">) => <pre className="bg-black/50 border border-white/10 p-6 rounded-2xl overflow-x-auto mb-8 font-mono text-sm shadow-[0_0_30px_rgba(0,0,0,0.5)]" {...props} />,
   // Custom Callout Component
-  Callout: (props: any) => (
+  Callout: (props: ComponentProps<"div">) => (
     <div className="bg-primary-900/10 border border-primary-500/20 rounded-2xl p-6 my-10 flex gap-4 items-start shadow-[0_0_30px_rgba(99,102,241,0.05)]">
        <span className="text-3xl leading-none">💡</span>
        <div className="text-zinc-300 leading-relaxed">{props.children}</div>
     </div>
   ),
   // Custom Warning Component
-  Warning: (props: any) => (
+  Warning: (props: ComponentProps<"div">) => (
     <div className="bg-red-900/10 border border-red-500/20 rounded-2xl p-6 my-10 flex gap-4 items-start shadow-[0_0_30px_rgba(239,68,68,0.05)]">
        <span className="text-3xl leading-none">⚠️</span>
        <div className="text-zinc-300 leading-relaxed">{props.children}</div>

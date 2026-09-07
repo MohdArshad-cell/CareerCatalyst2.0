@@ -3,7 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, ArrowLeft, Code2, Layout, Zap, Search, Eye, Monitor } from "lucide-react";
+import { ArrowRight, ArrowLeft, Code2, Layout, Zap, Eye, Monitor } from "lucide-react";
 import Link from "next/link";
 
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer));
@@ -45,7 +45,7 @@ export default function PortfolioServicePage() {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Wix is a Red Flag 🚩</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              If you are applying for a top-tier role, your portfolio *is* a critical assessment. Using a standard template tells hiring managers you don't stand out.
+              If you are applying for a top-tier role, your portfolio *is* a critical assessment. Using a standard template tells hiring managers you don&apos;t stand out.
             </p>
           </div>
           
@@ -262,7 +262,7 @@ export default function PortfolioServicePage() {
            <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">We Present Your Code Properly</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              A GitHub link isn't enough. We design mini "Case Studies" for your top projects, breaking down the architecture and business impact so recruiters instantly understand your value.
+              A GitHub link isn&apos;t enough. We design mini &quot;Case Studies&quot; for your top projects, breaking down the architecture and business impact so recruiters instantly understand your value.
             </p>
           </div>
 
@@ -318,7 +318,7 @@ export default function PortfolioServicePage() {
         <div className="text-center bg-zinc-900/50 border border-white/10 rounded-3xl p-12">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to deploy?</h2>
           <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
-            Stop relying on templates. Let's build a custom portfolio that proves you are a top-tier professional.
+            Stop relying on templates. Let&apos;s build a custom portfolio that proves you are a top-tier professional.
           </p>
           <a 
             href="https://wa.me/917887096421?text=Hi,%20I'm%20interested%20in%20the%20Portfolio%20Development%20service"

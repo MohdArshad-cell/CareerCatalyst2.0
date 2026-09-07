@@ -74,7 +74,7 @@ export default function AboutPage() {
                   Every day, we watched Applicant Tracking Systems (ATS) automatically trash resumes from incredibly talented candidates simply because they used a two-column PDF format, or lacked the exact boolean keywords the recruiter typed into LinkedIn.
                 </p>
                 <p className="text-white font-medium">
-                  The hiring process isn't a meritocracy anymore. It's a search engine optimization game.
+                  The hiring process isn&apos;t a meritocracy anymore. It&apos;s a search engine optimization game.
                 </p>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             <div className="pl-6 border-l-2 border-primary-500/30">
               <h4 className="text-xl font-bold text-white mb-3">We built the cheat code.</h4>
               <p className="text-zinc-400 leading-relaxed">
-                We founded Career Catalyst to level the playing field. We don't just give you generic career advice. We re-engineer your profile, compile your LaTeX, and restructure your digital presence.
+                We founded Career Catalyst to level the playing field. We don&apos;t just give you generic career advice. We re-engineer your profile, compile your LaTeX, and restructure your digital presence.
               </p>
             </div>
             <div className="pl-6 border-l-2 border-accent-500/30">
@@ -137,9 +137,9 @@ export default function AboutPage() {
           className="relative bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-[3rem] p-12 md:p-20 text-center overflow-hidden shadow-2xl"
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15)_0%,transparent_70%)] pointer-events-none" />
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight relative z-10">Let's rewrite your narrative.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight relative z-10">Let&apos;s rewrite your narrative.</h2>
           <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto font-light relative z-10">
-            Reach out directly on WhatsApp to discuss your career goals. We'll tell you exactly what you need to change to start getting interviews today.
+            Reach out directly on WhatsApp to discuss your career goals. We&apos;ll tell you exactly what you need to change to start getting interviews today.
           </p>
           <a 
             href="https://wa.me/917887096421?text=Hi,%20I'm%20ready%20to%20transform%20my%20career%20assets." 

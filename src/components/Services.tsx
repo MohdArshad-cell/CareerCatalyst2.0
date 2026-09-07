@@ -53,7 +53,7 @@ const services = [
   }
 ];
 
-function ServiceCard({ service, index }: { service: typeof services[0], index: number }) {
+function ServiceCard({ service }: { service: typeof services[0] }) {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const mouseX = useMotionValue(0);
@@ -219,7 +219,7 @@ export function Services({ hideHeading = false }: { hideHeading?: boolean }) {
         {/* Use perspective to enable 3D transform children */}
         <div className="grid lg:grid-cols-3 gap-8" style={{ perspective: "2000px" }}>
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            <ServiceCard key={index} service={service} />
           ))}
         </div>
       </div>

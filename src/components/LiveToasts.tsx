@@ -2,8 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { CheckCircle2, Zap } from "lucide-react";
-
 import { recentNotifications as notifications } from "@/data/constants";
 
 export function LiveToasts() {
